@@ -1,0 +1,111 @@
+"""Любое значение которое не получилось сериализовать"""
+scalar Any
+
+input DeleteHotelParamsExampleInput {
+  """The ID of the existing hotel resource."""
+  id: Float!
+}
+
+enum Direction {
+  ASC
+  DESC
+}
+
+type Example {
+  Hotel: exampleHotel
+}
+
+type exampleHotel {
+  getAllHotel(query: GetAllHotelQueryInput): Page_Hotel
+  getHotel(params: GetHotelParamsInput!): Hotel
+}
+
+type ExampleMutation {
+  HotelMutation: HotelMutation
+}
+
+input GetAllHotelQueryInput {
+  """Tha page size"""
+  size: Float!
+
+  """The page number (zero-based)"""
+  page: Float!
+}
+
+input GetHotelParamsInput {
+  """The ID of the hotel."""
+  id: Float!
+}
+
+"""a simple domain entity doubling as a DTO"""
+type Hotel {
+  city: String
+  name: String
+  rating: Float
+  description: String
+  id: Float
+}
+
+"""a simple domain entity doubling as a DTO"""
+input HotelInput {
+  city: String
+  name: String
+  rating: Float
+  description: String
+  id: Float
+}
+
+type HotelMutation {
+  createHotel(payload: HotelInput!): Any
+  deleteHotel(params: DeleteHotelParamsExampleInput!): Any
+  updateHotel(params: UpdateHotelParamsExampleInput!, payload: HotelInput!): Any
+}
+
+type Mutation {
+  ExampleMutation: ExampleMutation
+}
+
+enum NullHandling {
+  NATIVE
+  NULLS_FIRST
+  NULLS_LAST
+}
+
+type Order {
+  serialVersionUID: Float
+  nullHandling: NullHandling
+  ignoreCase: Boolean
+  property: String
+  DEFAULT_IGNORE_CASE: Boolean
+  direction: Direction
+  descending: Boolean
+  ascending: Boolean
+}
+
+type Page_Hotel {
+  last: Boolean
+  content: [Hotel]
+  number: Float
+  sort: Sort
+  first: Boolean
+  size: Float
+  numberOfElements: Float
+  totalElements: Float
+  totalPages: Float
+}
+
+type Query {
+  Example: Example
+}
+
+type Sort {
+  DEFAULT_DIRECTION: Direction
+  serialVersionUID: Float
+  orders: [Order]
+  orderFor: Order
+}
+
+input UpdateHotelParamsExampleInput {
+  """The ID of the existing hotel resource."""
+  id: Float!
+}
