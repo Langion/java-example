@@ -1,7 +1,7 @@
 """Любое значение которое не получилось сериализовать"""
 scalar Any
 
-input DeleteHotelParamsExampleInput {
+input DeleteHotelParamsExampleHotelMutationInterplayInput {
   """The ID of the existing hotel resource."""
   id: Float!
 }
@@ -12,16 +12,11 @@ enum Direction {
 }
 
 type Example {
-  Hotel: exampleHotel
-}
-
-type exampleHotel {
-  getAllHotel(query: GetAllHotelQueryInput): Page_Hotel
-  getHotel(params: GetHotelParamsInput!): Hotel
+  Hotel: HotelExampleExample
 }
 
 type ExampleMutation {
-  HotelMutation: HotelMutation
+  HotelMutation: HotelMutationExample
 }
 
 input GetAllHotelQueryInput {
@@ -38,16 +33,21 @@ input GetHotelParamsInput {
 }
 
 """a simple domain entity doubling as a DTO"""
-type Hotel {
+type HotelExample {
   city: String
   name: String
   rating: Float
   description: String
   id: Float
+}
+
+type HotelExampleExample {
+  getAllHotel(query: GetAllHotelQueryInput): Page_HotelExample
+  getHotel(params: GetHotelParamsInput!): HotelExample
 }
 
 """a simple domain entity doubling as a DTO"""
-input HotelInput {
+input HotelExampleInput {
   city: String
   name: String
   rating: Float
@@ -55,10 +55,10 @@ input HotelInput {
   id: Float
 }
 
-type HotelMutation {
-  createHotel(payload: HotelInput!): Any
-  deleteHotel(params: DeleteHotelParamsExampleInput!): Any
-  updateHotel(params: UpdateHotelParamsExampleInput!, payload: HotelInput!): Any
+type HotelMutationExample {
+  createHotel(payload: HotelExampleInput!): Any
+  deleteHotel(params: DeleteHotelParamsExampleHotelMutationInterplayInput!): Any
+  updateHotel(params: UpdateHotelParamsExampleHotelMutationInterplayInput!, payload: HotelExampleInput!): Any
 }
 
 type Mutation {
@@ -82,9 +82,9 @@ type Order {
   ascending: Boolean
 }
 
-type Page_Hotel {
+type Page_HotelExample {
   last: Boolean
-  content: [Hotel]
+  content: [HotelExample]
   number: Float
   sort: Sort
   first: Boolean
@@ -105,7 +105,7 @@ type Sort {
   orderFor: Order
 }
 
-input UpdateHotelParamsExampleInput {
+input UpdateHotelParamsExampleHotelMutationInterplayInput {
   """The ID of the existing hotel resource."""
   id: Float!
 }

@@ -134,21 +134,23 @@ export namespace HotelInterplay {
 }
 
 export const Hotel = new graphql.GraphQLObjectType({
-  name: "exampleHotel",
+  name: "HotelExampleExample",
   fields: {
     getAllHotel: {
       type: CommonGql.Page(false, ExampleGql.Hotel(false)),
       args: {
         query: { type: HotelInterplay.GetAllHotelQuery(true) },
       },
-      resolve: (source: any, args: any, c: any, info: any) => ExampleApi.Hotel.getAllHotel(args, { source, info, ...c }),
+      resolve: (source: any, args: any, c: any, info: any) =>
+        ExampleApi.Hotel.getAllHotel(args, { source, info, origin: "example", ...c }),
     },
     getHotel: {
       type: ExampleGql.Hotel(false),
       args: {
         params: { type: new graphql.GraphQLNonNull(HotelInterplay.GetHotelParams(true)) },
       },
-      resolve: (source: any, args: any, c: any, info: any) => ExampleApi.Hotel.getHotel(args, { source, info, ...c }),
+      resolve: (source: any, args: any, c: any, info: any) =>
+        ExampleApi.Hotel.getHotel(args, { source, info, origin: "example", ...c }),
     },
   },
 });
@@ -160,7 +162,9 @@ export namespace HotelMutationInterplay {
     function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
     function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
     function UpdateHotelParams(isInput: any) {
-      let name = isInput ? `UpdateHotelParamsExampleInput` : `UpdateHotelParamsExample`;
+      let name = isInput
+        ? `UpdateHotelParamsExampleHotelMutationInterplayInput`
+        : `UpdateHotelParamsExampleHotelMutationInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -192,7 +196,9 @@ export namespace HotelMutationInterplay {
     function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
     function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
     function GetHotelParams(isInput: any) {
-      let name = isInput ? `GetHotelParamsExampleInput` : `GetHotelParamsExample`;
+      let name = isInput
+        ? `GetHotelParamsExampleHotelMutationInterplayInput`
+        : `GetHotelParamsExampleHotelMutationInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -221,7 +227,9 @@ export namespace HotelMutationInterplay {
     function DeleteHotelParams(isInput: true): graphql.GraphQLInputObjectType;
     function DeleteHotelParams(isInput: false): graphql.GraphQLObjectType;
     function DeleteHotelParams(isInput: any) {
-      let name = isInput ? `DeleteHotelParamsExampleInput` : `DeleteHotelParamsExample`;
+      let name = isInput
+        ? `DeleteHotelParamsExampleHotelMutationInterplayInput`
+        : `DeleteHotelParamsExampleHotelMutationInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -253,7 +261,9 @@ export namespace HotelMutationInterplay {
     function GetAllHotelQuery(isInput: true): graphql.GraphQLInputObjectType;
     function GetAllHotelQuery(isInput: false): graphql.GraphQLObjectType;
     function GetAllHotelQuery(isInput: any) {
-      let name = isInput ? `GetAllHotelQueryExampleInput` : `GetAllHotelQueryExample`;
+      let name = isInput
+        ? `GetAllHotelQueryExampleHotelMutationInterplayInput`
+        : `GetAllHotelQueryExampleHotelMutationInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -282,21 +292,23 @@ export namespace HotelMutationInterplay {
 }
 
 export const HotelMutation = new graphql.GraphQLObjectType({
-  name: "HotelMutation",
+  name: "HotelMutationExample",
   fields: {
     createHotel: {
       type: CommonGql.Any,
       args: {
         payload: { type: new graphql.GraphQLNonNull(ExampleGql.Hotel(true)) },
       },
-      resolve: (source: any, args: any, c: any, info: any) => ExampleApi.Hotel.createHotel(args, { source, info, ...c }),
+      resolve: (source: any, args: any, c: any, info: any) =>
+        ExampleApi.Hotel.createHotel(args, { source, info, origin: "example", ...c }),
     },
     deleteHotel: {
       type: CommonGql.Any,
       args: {
         params: { type: new graphql.GraphQLNonNull(HotelMutationInterplay.DeleteHotelParams(true)) },
       },
-      resolve: (source: any, args: any, c: any, info: any) => ExampleApi.Hotel.deleteHotel(args, { source, info, ...c }),
+      resolve: (source: any, args: any, c: any, info: any) =>
+        ExampleApi.Hotel.deleteHotel(args, { source, info, origin: "example", ...c }),
     },
     updateHotel: {
       type: CommonGql.Any,
@@ -304,7 +316,8 @@ export const HotelMutation = new graphql.GraphQLObjectType({
         params: { type: new graphql.GraphQLNonNull(HotelMutationInterplay.UpdateHotelParams(true)) },
         payload: { type: new graphql.GraphQLNonNull(ExampleGql.Hotel(true)) },
       },
-      resolve: (source: any, args: any, c: any, info: any) => ExampleApi.Hotel.updateHotel(args, { source, info, ...c }),
+      resolve: (source: any, args: any, c: any, info: any) =>
+        ExampleApi.Hotel.updateHotel(args, { source, info, origin: "example", ...c }),
     },
   },
 });

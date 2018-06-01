@@ -14,6 +14,8 @@
     "url": "git+https://github.com/Langion/java-example.git"
   },
   "scripts": {
+    "integrate": "ts-node src/integration/integrate.ts",
+    "start": "ts-node src/integration/start.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

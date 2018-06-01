@@ -42,7 +42,7 @@
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "exampleHotel",
+                            "name": "HotelExampleExample",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -56,7 +56,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "exampleHotel",
+                "name": "HotelExampleExample",
                 "description": null,
                 "fields": [
                     {
@@ -76,7 +76,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Page_Hotel",
+                            "name": "Page_HotelExample",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -103,7 +103,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Hotel",
+                            "name": "HotelExample",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -166,7 +166,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "Page_Hotel",
+                "name": "Page_HotelExample",
                 "description": "",
                 "fields": [
                     {
@@ -190,7 +190,7 @@
                             "name": null,
                             "ofType": {
                                 "kind": "OBJECT",
-                                "name": "Hotel",
+                                "name": "HotelExample",
                                 "ofType": null
                             }
                         },
@@ -299,7 +299,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "Hotel",
+                "name": "HotelExample",
                 "description": "a simple domain entity doubling as a DTO",
                 "fields": [
                     {
@@ -659,7 +659,7 @@
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "HotelMutation",
+                            "name": "HotelMutationExample",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -673,7 +673,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "HotelMutation",
+                "name": "HotelMutationExample",
                 "description": null,
                 "fields": [
                     {
@@ -688,7 +688,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelInput",
+                                        "name": "HotelExampleInput",
                                         "ofType": null
                                     }
                                 },
@@ -715,7 +715,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "DeleteHotelParamsExampleInput",
+                                        "name": "DeleteHotelParamsExampleHotelMutationInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -742,7 +742,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "UpdateHotelParamsExampleInput",
+                                        "name": "UpdateHotelParamsExampleHotelMutationInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -756,7 +756,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelInput",
+                                        "name": "HotelExampleInput",
                                         "ofType": null
                                     }
                                 },
@@ -779,7 +779,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "HotelInput",
+                "name": "HotelExampleInput",
                 "description": "a simple domain entity doubling as a DTO",
                 "fields": null,
                 "inputFields": [
@@ -850,7 +850,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "DeleteHotelParamsExampleInput",
+                "name": "DeleteHotelParamsExampleHotelMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
@@ -875,7 +875,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "UpdateHotelParamsExampleInput",
+                "name": "UpdateHotelParamsExampleHotelMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
