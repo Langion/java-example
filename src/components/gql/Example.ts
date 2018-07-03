@@ -15,13 +15,13 @@ export const Hotel = (() => {
     if (!cache[name]) {
       const c = {
         name,
-        description: "a simple domain entity doubling as a DTO",
+        description: `a simple domain entity doubling as a DTO`,
         fields: () => ({
-          city: { type: graphql.GraphQLString, description: "" },
-          name: { type: graphql.GraphQLString, description: "" },
-          rating: { type: graphql.GraphQLFloat, description: "" },
-          description: { type: graphql.GraphQLString, description: "" },
-          id: { type: graphql.GraphQLFloat, description: "" },
+          city: { type: graphql.GraphQLString, description: `` },
+          name: { type: graphql.GraphQLString, description: `` },
+          rating: { type: graphql.GraphQLFloat, description: `` },
+          description: { type: graphql.GraphQLString, description: `` },
+          id: { type: graphql.GraphQLFloat, description: `` },
         }),
       } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
 

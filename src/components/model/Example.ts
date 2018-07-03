@@ -1,5 +1,7 @@
 /* tslint:disable */
 
+export * from "./Common";
+
 /**
  * a simple domain entity doubling as a DTO
  */

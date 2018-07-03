@@ -26,21 +26,9 @@ export namespace Hotel {
     id: number;
   }
 
-  export interface GetAllHotelQuery {
-    /**
-     * Tha page size
-     */
-    size: number;
-
-    /**
-     * The page number (zero-based)
-     */
-    page: number;
-  }
-
   export const createHotel = api
     .path("/example/v1/hotels/")
-    .request<void, void, ExampleModel.Hotel>("post")
+    .request<void, void, void>("post")
     .build();
 
   export const deleteHotel = api
@@ -50,7 +38,7 @@ export namespace Hotel {
 
   export const getAllHotel = api
     .path("/example/v1/hotels/")
-    .request<CommonModel.Page<ExampleModel.Hotel>, GetAllHotelQuery, void>("get")
+    .request<CommonModel.Page<ExampleModel.Hotel>, void, void>("get")
     .build();
 
   export const getHotel = api

@@ -32,16 +32,16 @@ export const Order = (() => {
     if (!cache[name]) {
       const c = {
         name,
-        description: "",
+        description: ``,
         fields: () => ({
-          serialVersionUID: { type: graphql.GraphQLFloat, description: "" },
-          nullHandling: { type: NullHandling, description: "" },
-          ignoreCase: { type: graphql.GraphQLBoolean, description: "" },
-          property: { type: graphql.GraphQLString, description: "" },
-          DEFAULT_IGNORE_CASE: { type: graphql.GraphQLBoolean, description: "" },
-          direction: { type: Direction, description: "" },
-          descending: { type: graphql.GraphQLBoolean, description: "" },
-          ascending: { type: graphql.GraphQLBoolean, description: "" },
+          serialVersionUID: { type: graphql.GraphQLFloat, description: `` },
+          nullHandling: { type: NullHandling, description: `` },
+          ignoreCase: { type: graphql.GraphQLBoolean, description: `` },
+          property: { type: graphql.GraphQLString, description: `` },
+          DEFAULT_IGNORE_CASE: { type: graphql.GraphQLBoolean, description: `` },
+          direction: { type: Direction, description: `` },
+          descending: { type: graphql.GraphQLBoolean, description: `` },
+          ascending: { type: graphql.GraphQLBoolean, description: `` },
         }),
       } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
 
@@ -74,7 +74,7 @@ export const Page = (() => {
     if (!cache[name]) {
       const c = {
         name,
-        description: "",
+        description: ``,
         fields: () => ({
           ...(function() {
             const fields = Slice(isInput, T!).getFields();
@@ -84,8 +84,8 @@ export const Page = (() => {
             );
             return result;
           })(),
-          totalElements: { type: graphql.GraphQLFloat, description: "" },
-          totalPages: { type: graphql.GraphQLFloat, description: "" },
+          totalElements: { type: graphql.GraphQLFloat, description: `` },
+          totalPages: { type: graphql.GraphQLFloat, description: `` },
         }),
       } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
 
@@ -118,15 +118,15 @@ export const Slice = (() => {
     if (!cache[name]) {
       const c = {
         name,
-        description: "",
+        description: ``,
         fields: () => ({
-          last: { type: graphql.GraphQLBoolean, description: "" },
-          content: { type: new graphql.GraphQLList(T!), description: "" },
-          number: { type: graphql.GraphQLFloat, description: "" },
-          sort: { type: Sort(isInput), description: "" },
-          first: { type: graphql.GraphQLBoolean, description: "" },
-          size: { type: graphql.GraphQLFloat, description: "" },
-          numberOfElements: { type: graphql.GraphQLFloat, description: "" },
+          last: { type: graphql.GraphQLBoolean, description: `` },
+          content: { type: new graphql.GraphQLList(T!), description: `` },
+          number: { type: graphql.GraphQLFloat, description: `` },
+          sort: { type: Sort(isInput), description: `` },
+          first: { type: graphql.GraphQLBoolean, description: `` },
+          size: { type: graphql.GraphQLFloat, description: `` },
+          numberOfElements: { type: graphql.GraphQLFloat, description: `` },
         }),
       } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
 
@@ -153,12 +153,12 @@ export const Sort = (() => {
     if (!cache[name]) {
       const c = {
         name,
-        description: "",
+        description: ``,
         fields: () => ({
-          DEFAULT_DIRECTION: { type: Direction, description: "" },
-          serialVersionUID: { type: graphql.GraphQLFloat, description: "" },
-          orders: { type: new graphql.GraphQLList(Order(isInput)), description: "" },
-          orderFor: { type: Order(isInput), description: "" },
+          DEFAULT_DIRECTION: { type: Direction, description: `` },
+          serialVersionUID: { type: graphql.GraphQLFloat, description: `` },
+          orders: { type: new graphql.GraphQLList(Order(isInput)), description: `` },
+          orderFor: { type: Order(isInput), description: `` },
         }),
       } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
 
