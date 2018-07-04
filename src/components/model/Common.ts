@@ -1,15 +1,19 @@
 /* tslint:disable */
 
-export const enum Direction {
+export const enum DirectionEnum {
   ASC = "ASC",
   DESC = "DESC",
 }
 
-export const enum NullHandling {
+export type Direction = "ASC" | "DESC";
+
+export const enum NullHandlingEnum {
   NATIVE = "NATIVE",
   NULLS_FIRST = "NULLS_FIRST",
   NULLS_LAST = "NULLS_LAST",
 }
+
+export type NullHandling = "NATIVE" | "NULLS_FIRST" | "NULLS_LAST";
 
 export interface Order {
   serialVersionUID: number;
