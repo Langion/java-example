@@ -17,10 +17,10 @@ export const Hotel = (() => {
         name,
         description: `a simple domain entity doubling as a DTO`,
         fields: () => ({
-          city: { type: graphql.GraphQLString, description: `` },
+          city: { type: new graphql.GraphQLNonNull(graphql.GraphQLString), description: `` },
           name: { type: graphql.GraphQLString, description: `` },
-          rating: { type: graphql.GraphQLFloat, description: `` },
-          description: { type: graphql.GraphQLString, description: `` },
+          rating: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `` },
+          description: { type: new graphql.GraphQLNonNull(graphql.GraphQLString), description: `` },
           id: { type: graphql.GraphQLFloat, description: `` },
         }),
       } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;

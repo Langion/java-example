@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@langion/apira": "1.0.2",
-    "@langion/prism": "1.0.9",
+    "@langion/prism": "1.0.10",
     "@types/express": "4.16.0",
     "@types/express-graphql": "0.6.1",
     "@types/graphql": "0.13.2",

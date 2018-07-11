@@ -12,16 +12,16 @@ export namespace Hotel {
     id: number;
   }
 
-  export interface GetHotelParams {
+  export interface DeleteHotelParams {
     /**
-     * The ID of the hotel.
+     * The ID of the existing hotel resource.
      */
     id: number;
   }
 
-  export interface DeleteHotelParams {
+  export interface GetHotelParams {
     /**
-     * The ID of the existing hotel resource.
+     * The ID of the hotel.
      */
     id: number;
   }
@@ -30,12 +30,12 @@ export namespace Hotel {
     /**
      * Tha page size
      */
-    size: number;
+    size?: number;
 
     /**
      * The page number (zero-based)
      */
-    page: number;
+    page?: number;
   }
 
   export const createHotel = api

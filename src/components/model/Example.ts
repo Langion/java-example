@@ -7,8 +7,8 @@ export * from "./Common";
  */
 export interface Hotel {
   city: string;
-  name: string;
+  name?: string;
   rating: number;
   description: string;
-  id: number;
+  id?: number;
 }
