@@ -1,16 +1,27 @@
 /* tslint:disable */
 
 import * as graphql from "graphql";
-import * as ExampleGraphql from "./Example";
+import * as ServiceaGraphql from "./Servicea";
+import * as ServicebGraphql from "./Serviceb";
 
 export class Mutation {
   public create() {
     return {
-      ExampleMutation: {
+      ServiceaMutation: {
         type: new graphql.GraphQLObjectType({
-          name: "ExampleMutation",
+          name: "ServiceaMutation",
           fields: {
-            HotelMutation: { type: ExampleGraphql.HotelMutation, resolve: () => ({}) },
+            HotelMutation: { type: ServiceaGraphql.HotelMutation, resolve: () => ({}) },
+            TestAMutation: { type: ServiceaGraphql.TestAMutation, resolve: () => ({}) },
+          },
+        }),
+        resolve: () => ({}),
+      },
+      ServicebMutation: {
+        type: new graphql.GraphQLObjectType({
+          name: "ServicebMutation",
+          fields: {
+            HotelMutation: { type: ServicebGraphql.HotelMutation, resolve: () => ({}) },
           },
         }),
         resolve: () => ({}),

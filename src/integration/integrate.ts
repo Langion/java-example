@@ -5,7 +5,7 @@ import * as path from "path";
 import * as shell from "shelljs";
 import * as api from "../core/api";
 
-type Origins = "example" | "shared" | "common";
+type Origins = "servicea" | "serviceb" | "shared" | "common";
 type Emission = "api" | "model" | "graphql" | "gql";
 
 const out = path.resolve(__dirname, "../");
@@ -16,22 +16,29 @@ if (!shell.which("mvn")) {
     shell.exit(1);
 }
 
-const langionJson = build();
-const introspectionResult = introspect(langionJson);
+const introspectionResult = introspect();
 emit(introspectionResult);
 
-function build() {
-    shell.exec(`mvn install -DskipTests=true`, { cwd: server });
-    const json = path.join(server, "java-example.json");
+function build(service: string) {
+    const cwd = path.join(server, service);
+    shell.exec(`mvn install -DskipTests=true`, { cwd });
+    const json = path.join(cwd, `${service}.json`);
     const result = require(json) as Langion;
     return result;
 }
 
-function introspect(langion: Langion) {
+function introspect() {
+    const servicea = build("servicea");
+    const serviceb = build("serviceb");
+
     const origins: Array<introspector.Origin<Origins>> = [
         {
-            langion,
-            name: "example",
+            langion: servicea,
+            name: "servicea",
+        },
+        {
+            langion: serviceb,
+            name: "serviceb",
         },
     ];
 
@@ -45,7 +52,7 @@ function introspect(langion: Langion) {
         getOriginFromModuleName: (p) => {
             const name = p.split(".")[2];
 
-            if (name === ("example" as Origins)) {
+            if (name === ("servicea" as Origins) || name === ("serviceb" as Origins)) {
                 return name;
             } else {
                 return "common";

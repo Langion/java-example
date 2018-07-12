@@ -1,16 +1,27 @@
 /* tslint:disable */
 
 import * as graphql from "graphql";
-import * as ExampleGraphql from "./Example";
+import * as ServiceaGraphql from "./Servicea";
+import * as ServicebGraphql from "./Serviceb";
 
 export class Query {
   public create() {
     return {
-      Example: {
+      Servicea: {
         type: new graphql.GraphQLObjectType({
-          name: "Example",
+          name: "Servicea",
           fields: {
-            Hotel: { type: ExampleGraphql.Hotel, resolve: () => ({}) },
+            Hotel: { type: ServiceaGraphql.Hotel, resolve: () => ({}) },
+            TestA: { type: ServiceaGraphql.TestA, resolve: () => ({}) },
+          },
+        }),
+        resolve: () => ({}),
+      },
+      Serviceb: {
+        type: new graphql.GraphQLObjectType({
+          name: "Serviceb",
+          fields: {
+            Hotel: { type: ServicebGraphql.Hotel, resolve: () => ({}) },
           },
         }),
         resolve: () => ({}),

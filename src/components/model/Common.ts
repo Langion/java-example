@@ -395,8 +395,8 @@ export interface Slice<T = void> {
   last?: boolean;
   content?: T[];
   number?: number;
-  sort?: Sort;
   first?: boolean;
+  sort?: Sort;
   size?: number;
   numberOfElements?: number;
 }
