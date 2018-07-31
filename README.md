@@ -13,3 +13,5 @@ This is an example of using [Langion](https://github.com/Langion/langion) with J
  - http://localhost:4000/playground - Another [playground](https://github.com/prismagraphql/graphql-playground) for GraphQL
  - http://localhost:4000/voyager - [GraphQL voyager](https://github.com/APIs-guru/graphql-voyager) shows relations among your entities
 
+ One thing is that GrapqhQL works only on `servicea`
+

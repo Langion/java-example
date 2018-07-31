@@ -76,3 +76,7 @@ export namespace Hotel {
     .request<void, void, SharedModel.Hotel>("put")
     .build();
 }
+
+export namespace HotelService {
+
+}

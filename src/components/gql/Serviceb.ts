@@ -1,8 +1,8 @@
 /* tslint:disable */
 
 import * as graphql from "graphql";
+import * as CommonGql from "./Common";
 import * as SharedGql from "./Shared";
-
 export const HotelTwo = (() => {
   const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 

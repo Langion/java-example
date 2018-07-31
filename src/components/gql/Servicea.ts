@@ -1,7 +1,7 @@
 /* tslint:disable */
 
 import * as graphql from "graphql";
-
+import * as CommonGql from "./Common";
 export const TestAHotel = (() => {
   const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 
@@ -17,12 +17,11 @@ export const TestAHotel = (() => {
         name,
         description: `a simple domain entity doubling as a DTO`,
         fields: () => ({
-          test: { type: new graphql.GraphQLNonNull(graphql.GraphQLString), description: `` },
-          city: { type: new graphql.GraphQLNonNull(graphql.GraphQLString), description: `` },
-          name: { type: graphql.GraphQLString, description: `` },
-          rating: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `` },
-          description: { type: new graphql.GraphQLNonNull(graphql.GraphQLString), description: `` },
+          city: { type: graphql.GraphQLString, description: `` },
+          description: { type: graphql.GraphQLString, description: `` },
           id: { type: graphql.GraphQLFloat, description: `` },
+          name: { type: graphql.GraphQLString, description: `` },
+          rating: { type: graphql.GraphQLFloat, description: `` },
         }),
       } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
 

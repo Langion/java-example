@@ -16,8 +16,7 @@ if (!shell.which("mvn")) {
     shell.exit(1);
 }
 
-const introspectionResult = introspect();
-emit(introspectionResult);
+introspect().then((i) => emit(i));
 
 function build(service: string) {
     const cwd = path.join(server, service);
@@ -28,27 +27,24 @@ function build(service: string) {
 }
 
 function introspect() {
-    const servicea = build("servicea");
-    const serviceb = build("serviceb");
-
     const origins: Array<introspector.Origin<Origins>> = [
         {
-            langion: servicea,
+            getLangion: () => Promise.resolve(build("servicea")),
             name: "servicea",
         },
         {
-            langion: serviceb,
+            getLangion: () => Promise.resolve(build("serviceb")),
             name: "serviceb",
         },
     ];
 
     const config: introspector.IntrospectorConfig<Origins> = {
         origins,
-        parseJavaBeans: true,
         share: {
             name: "shared",
             origin: "shared",
         },
+        adapters: [new introspector.SwaggerAdapter(), new introspector.SpringAdapter()],
         getOriginFromModuleName: (p) => {
             const name = p.split(".")[2];
 
@@ -94,3 +90,4 @@ function emit(introspections: Record<Origins, introspector.Introspection<Origins
     const emitters = prism.Prism.emit(config);
     return emitters;
 }
+ 

@@ -1,17 +1,15 @@
 /* tslint:disable */
 
-export * from "./Shared";
-
 export * from "./Common";
+export * from "./Shared";
 
 /**
  * a simple domain entity doubling as a DTO
  */
 export interface TestAHotel {
-  test: string;
-  city: string;
-  name?: string;
-  rating: number;
-  description: string;
+  city?: string;
+  description?: string;
   id?: number;
+  name?: string;
+  rating?: number;
 }

@@ -65,6 +65,10 @@ export namespace Hotel {
     .build();
 }
 
+export namespace HotelService {
+
+}
+
 export namespace TestA {
   export interface UpdateHotelParams {
     /**
