@@ -1,6 +1,5 @@
 /* tslint:disable */
 
-export * from "./Common";
 export * from "./Shared";
 
 /**
