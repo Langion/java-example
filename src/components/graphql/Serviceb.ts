@@ -6,14 +6,16 @@ import * as CommonGql from "../gql/Common";
 import * as ServicebGql from "../gql/Serviceb";
 import * as SharedGql from "../gql/Shared";
 
-export namespace HotelInterplay {
+export namespace HotelControllerInterplay {
   export const UpdateHotelParams = (() => {
     const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 
     function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
     function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
     function UpdateHotelParams(isInput: any) {
-      let name = isInput ? `UpdateHotelParamsServicebHotelInterplayInput` : `UpdateHotelParamsServicebHotelInterplay`;
+      let name = isInput
+        ? `UpdateHotelParamsServicebHotelControllerInterplayInput`
+        : `UpdateHotelParamsServicebHotelControllerInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -45,7 +47,9 @@ export namespace HotelInterplay {
     function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
     function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
     function GetHotelParams(isInput: any) {
-      let name = isInput ? `GetHotelParamsServicebHotelInterplayInput` : `GetHotelParamsServicebHotelInterplay`;
+      let name = isInput
+        ? `GetHotelParamsServicebHotelControllerInterplayInput`
+        : `GetHotelParamsServicebHotelControllerInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -103,7 +107,9 @@ export namespace HotelInterplay {
     function DeleteHotelParams(isInput: true): graphql.GraphQLInputObjectType;
     function DeleteHotelParams(isInput: false): graphql.GraphQLObjectType;
     function DeleteHotelParams(isInput: any) {
-      let name = isInput ? `DeleteHotelParamsServicebHotelInterplayInput` : `DeleteHotelParamsServicebHotelInterplay`;
+      let name = isInput
+        ? `DeleteHotelParamsServicebHotelControllerInterplayInput`
+        : `DeleteHotelParamsServicebHotelControllerInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -135,7 +141,9 @@ export namespace HotelInterplay {
     function GetAllHotelQuery(isInput: true): graphql.GraphQLInputObjectType;
     function GetAllHotelQuery(isInput: false): graphql.GraphQLObjectType;
     function GetAllHotelQuery(isInput: any) {
-      let name = isInput ? `GetAllHotelQueryServicebHotelInterplayInput` : `GetAllHotelQueryServicebHotelInterplay`;
+      let name = isInput
+        ? `GetAllHotelQueryServicebHotelControllerInterplayInput`
+        : `GetAllHotelQueryServicebHotelControllerInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -163,40 +171,40 @@ export namespace HotelInterplay {
   })();
 }
 
-export const Hotel = new graphql.GraphQLObjectType({
-  name: "HotelServiceb",
+export const HotelController = new graphql.GraphQLObjectType({
+  name: "HotelControllerServiceb",
   fields: {
     getAllHotel: {
       description: `Path: /example/v1/hotels/\nGet a paginated list of all hotels.The list is paginated. You can provide a page number (default 0) and a page size (default 100)`,
       type: CommonGql.Page(false, SharedGql.Hotel(false)),
       args: {
-        query: { type: HotelInterplay.GetAllHotelQuery(true) },
+        query: { type: HotelControllerInterplay.GetAllHotelQuery(true) },
       },
       resolve: (source: any, args: any, c: any, info: any) =>
-        ServicebApi.Hotel.getAllHotel(args, { source, info, origin: "serviceb", ...c }),
+        ServicebApi.HotelController.getAllHotel(args, { source, info, origin: "serviceb", ...c }),
     },
     getHotel: {
       description: `Path: /example/v1/hotels/{id}\nGet a single hotel.You have to provide a valid hotel ID.`,
       type: SharedGql.Hotel(false),
       args: {
-        params: { type: new graphql.GraphQLNonNull(HotelInterplay.GetHotelParams(true)) },
+        params: { type: new graphql.GraphQLNonNull(HotelControllerInterplay.GetHotelParams(true)) },
       },
       resolve: (source: any, args: any, c: any, info: any) =>
-        ServicebApi.Hotel.getHotel(args, { source, info, origin: "serviceb", ...c }),
+        ServicebApi.HotelController.getHotel(args, { source, info, origin: "serviceb", ...c }),
     },
     getHotelTwo: {
       description: `Path: /example/v1/hotels/two/{id}\nGet a single hotel.You have to provide a valid hotel ID.`,
       type: ServicebGql.HotelTwo(false),
       args: {
-        params: { type: new graphql.GraphQLNonNull(HotelInterplay.GetHotelTwoParams(true)) },
+        params: { type: new graphql.GraphQLNonNull(HotelControllerInterplay.GetHotelTwoParams(true)) },
       },
       resolve: (source: any, args: any, c: any, info: any) =>
-        ServicebApi.Hotel.getHotelTwo(args, { source, info, origin: "serviceb", ...c }),
+        ServicebApi.HotelController.getHotelTwo(args, { source, info, origin: "serviceb", ...c }),
     },
   },
 });
 
-export namespace HotelMutationInterplay {
+export namespace HotelControllerMutationInterplay {
   export const UpdateHotelParams = (() => {
     const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 
@@ -204,8 +212,8 @@ export namespace HotelMutationInterplay {
     function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
     function UpdateHotelParams(isInput: any) {
       let name = isInput
-        ? `UpdateHotelParamsServicebHotelMutationInterplayInput`
-        : `UpdateHotelParamsServicebHotelMutationInterplay`;
+        ? `UpdateHotelParamsServicebHotelControllerMutationInterplayInput`
+        : `UpdateHotelParamsServicebHotelControllerMutationInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -238,8 +246,8 @@ export namespace HotelMutationInterplay {
     function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
     function GetHotelParams(isInput: any) {
       let name = isInput
-        ? `GetHotelParamsServicebHotelMutationInterplayInput`
-        : `GetHotelParamsServicebHotelMutationInterplay`;
+        ? `GetHotelParamsServicebHotelControllerMutationInterplayInput`
+        : `GetHotelParamsServicebHotelControllerMutationInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -269,8 +277,8 @@ export namespace HotelMutationInterplay {
     function GetHotelTwoParams(isInput: false): graphql.GraphQLObjectType;
     function GetHotelTwoParams(isInput: any) {
       let name = isInput
-        ? `GetHotelTwoParamsServicebHotelMutationInterplayInput`
-        : `GetHotelTwoParamsServicebHotelMutationInterplay`;
+        ? `GetHotelTwoParamsServicebHotelControllerMutationInterplayInput`
+        : `GetHotelTwoParamsServicebHotelControllerMutationInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -300,8 +308,8 @@ export namespace HotelMutationInterplay {
     function DeleteHotelParams(isInput: false): graphql.GraphQLObjectType;
     function DeleteHotelParams(isInput: any) {
       let name = isInput
-        ? `DeleteHotelParamsServicebHotelMutationInterplayInput`
-        : `DeleteHotelParamsServicebHotelMutationInterplay`;
+        ? `DeleteHotelParamsServicebHotelControllerMutationInterplayInput`
+        : `DeleteHotelParamsServicebHotelControllerMutationInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -334,8 +342,8 @@ export namespace HotelMutationInterplay {
     function GetAllHotelQuery(isInput: false): graphql.GraphQLObjectType;
     function GetAllHotelQuery(isInput: any) {
       let name = isInput
-        ? `GetAllHotelQueryServicebHotelMutationInterplayInput`
-        : `GetAllHotelQueryServicebHotelMutationInterplay`;
+        ? `GetAllHotelQueryServicebHotelControllerMutationInterplayInput`
+        : `GetAllHotelQueryServicebHotelControllerMutationInterplay`;
 
       name = name.replace(/[\[\]]/g, "");
 
@@ -363,8 +371,8 @@ export namespace HotelMutationInterplay {
   })();
 }
 
-export const HotelMutation = new graphql.GraphQLObjectType({
-  name: "HotelMutationServiceb",
+export const HotelControllerMutation = new graphql.GraphQLObjectType({
+  name: "HotelControllerMutationServiceb",
   fields: {
     createHotel: {
       description: `Path: /example/v1/hotels/\nCreate a hotel resource.Returns the URL of the new resource in the Location header.`,
@@ -373,26 +381,26 @@ export const HotelMutation = new graphql.GraphQLObjectType({
         payload: { type: new graphql.GraphQLNonNull(SharedGql.Hotel(true)) },
       },
       resolve: (source: any, args: any, c: any, info: any) =>
-        ServicebApi.Hotel.createHotel(args, { source, info, origin: "serviceb", ...c }),
+        ServicebApi.HotelController.createHotel(args, { source, info, origin: "serviceb", ...c }),
     },
     deleteHotel: {
       description: `Path: /example/v1/hotels/{id}\nDelete a hotel resource.You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.`,
       type: CommonGql.Any,
       args: {
-        params: { type: new graphql.GraphQLNonNull(HotelMutationInterplay.DeleteHotelParams(true)) },
+        params: { type: new graphql.GraphQLNonNull(HotelControllerMutationInterplay.DeleteHotelParams(true)) },
       },
       resolve: (source: any, args: any, c: any, info: any) =>
-        ServicebApi.Hotel.deleteHotel(args, { source, info, origin: "serviceb", ...c }),
+        ServicebApi.HotelController.deleteHotel(args, { source, info, origin: "serviceb", ...c }),
     },
     updateHotel: {
       description: `Path: /example/v1/hotels/{id}\nUpdate a hotel resource.You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.`,
       type: CommonGql.Any,
       args: {
-        params: { type: new graphql.GraphQLNonNull(HotelMutationInterplay.UpdateHotelParams(true)) },
+        params: { type: new graphql.GraphQLNonNull(HotelControllerMutationInterplay.UpdateHotelParams(true)) },
         payload: { type: new graphql.GraphQLNonNull(SharedGql.Hotel(true)) },
       },
       resolve: (source: any, args: any, c: any, info: any) =>
-        ServicebApi.Hotel.updateHotel(args, { source, info, origin: "serviceb", ...c }),
+        ServicebApi.HotelController.updateHotel(args, { source, info, origin: "serviceb", ...c }),
     },
   },
 });

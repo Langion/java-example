@@ -1,17 +1,17 @@
 """Любое значение которое не получилось сериализовать"""
 scalar Any
 
-input DeleteHotelParamsServiceaHotelMutationInterplayInput {
+input DeleteHotelParamsServiceaHotelControllerMutationInterplayInput {
   """The ID of the existing hotel resource."""
   id: Float!
 }
 
-input DeleteHotelParamsServiceaTestAMutationInterplayInput {
+input DeleteHotelParamsServiceaTestAControllerMutationInterplayInput {
   """The ID of the existing hotel resource."""
   id: Float!
 }
 
-input DeleteHotelParamsServicebHotelMutationInterplayInput {
+input DeleteHotelParamsServicebHotelControllerMutationInterplayInput {
   """The ID of the existing hotel resource."""
   id: Float!
 }
@@ -29,7 +29,7 @@ input GetAllHotelQueryInput {
   page: Float!
 }
 
-input GetAllHotelQueryServiceaTestAInterplayInput {
+input GetAllHotelQueryServiceaTestAControllerInterplayInput {
   """Tha page size"""
   size: Float!
 
@@ -37,7 +37,7 @@ input GetAllHotelQueryServiceaTestAInterplayInput {
   page: Float!
 }
 
-input GetAllHotelQueryServicebHotelInterplayInput {
+input GetAllHotelQueryServicebHotelControllerInterplayInput {
   """Tha page size"""
   size: Float!
 
@@ -50,12 +50,12 @@ input GetHotelParamsInput {
   id: Float!
 }
 
-input GetHotelParamsServiceaTestAInterplayInput {
+input GetHotelParamsServiceaTestAControllerInterplayInput {
   """The ID of the hotel."""
   id: Float!
 }
 
-input GetHotelParamsServicebHotelInterplayInput {
+input GetHotelParamsServicebHotelControllerInterplayInput {
   """The ID of the hotel."""
   id: Float!
 }
@@ -70,76 +70,85 @@ input GetTestHotelParamsInput {
   id: Float!
 }
 
-type HotelMutationServicea {
+"""a simple domain entity doubling as a DTO"""
+type Hotel {
+  city: String
+  description: String
+  id: Float
+  name: String
+  rating: Float
+}
+
+type HotelControllerMutationServicea {
   """
   Path: /example/v1/hotels/
   Create a hotel resource.Returns the URL of the new resource in the Location header.
   """
-  createHotel(payload: HotelSharedInput!): Any
+  createHotel(payload: HotelInput!): Any
 
   """
   Path: /example/v1/hotels/{id}
   Delete a hotel resource.You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.
   """
-  deleteHotel(params: DeleteHotelParamsServiceaHotelMutationInterplayInput!): Any
+  deleteHotel(params: DeleteHotelParamsServiceaHotelControllerMutationInterplayInput!): Any
 
   """
   Path: /example/v1/hotels/{id}
   Update a hotel resource.You have to provide a valid hotel ID in the URL and in
   the payload. The ID attribute can not be updated.
   """
-  updateHotel(params: UpdateHotelParamsServiceaHotelMutationInterplayInput!, payload: HotelSharedInput!): Any
+  updateHotel(params: UpdateHotelParamsServiceaHotelControllerMutationInterplayInput!, payload: HotelInput!): Any
 }
 
-type HotelMutationServiceb {
+type HotelControllerMutationServiceb {
   """
   Path: /example/v1/hotels/
   Create a hotel resource.Returns the URL of the new resource in the Location header.
   """
-  createHotel(payload: HotelSharedInput!): Any
+  createHotel(payload: HotelInput!): Any
 
   """
   Path: /example/v1/hotels/{id}
   Delete a hotel resource.You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.
   """
-  deleteHotel(params: DeleteHotelParamsServicebHotelMutationInterplayInput!): Any
+  deleteHotel(params: DeleteHotelParamsServicebHotelControllerMutationInterplayInput!): Any
 
   """
   Path: /example/v1/hotels/{id}
   Update a hotel resource.You have to provide a valid hotel ID in the URL and in
   the payload. The ID attribute can not be updated.
   """
-  updateHotel(params: UpdateHotelParamsServicebHotelMutationInterplayInput!, payload: HotelSharedInput!): Any
+  updateHotel(params: UpdateHotelParamsServicebHotelControllerMutationInterplayInput!, payload: HotelInput!): Any
 }
 
-type HotelServicea {
+type HotelControllerServicea {
   """
   Path: /example/v1/hotels/
   Get a paginated list of all hotels.The list is paginated. You can provide a
   page number (default 0) and a page size (default 100)
   """
-  getAllHotel(query: GetAllHotelQueryInput): Page_HotelShared
+  getAllHotel(query: GetAllHotelQueryInput): Page_Hotel
 
   """
   Path: /example/v1/hotels/{id}
   Get a single hotel.You have to provide a valid hotel ID.
   """
-  getHotel(params: GetHotelParamsInput!): HotelShared
+  getHotel(params: GetHotelParamsInput!): Hotel
 }
 
-type HotelServiceb {
+type HotelControllerServiceb {
   """
   Path: /example/v1/hotels/
   Get a paginated list of all hotels.The list is paginated. You can provide a
   page number (default 0) and a page size (default 100)
   """
-  getAllHotel(query: GetAllHotelQueryServicebHotelInterplayInput): Page_HotelShared
+  getAllHotel(query: GetAllHotelQueryServicebHotelControllerInterplayInput): Page_Hotel
 
   """
   Path: /example/v1/hotels/{id}
   Get a single hotel.You have to provide a valid hotel ID.
   """
-  getHotel(params: GetHotelParamsServicebHotelInterplayInput!): HotelShared
+  getHotel(params: GetHotelParamsServicebHotelControllerInterplayInput!): Hotel
 
   """
   Path: /example/v1/hotels/two/{id}
@@ -149,16 +158,7 @@ type HotelServiceb {
 }
 
 """a simple domain entity doubling as a DTO"""
-type HotelShared {
-  city: String
-  description: String
-  id: Float
-  name: String
-  rating: Float
-}
-
-"""a simple domain entity doubling as a DTO"""
-input HotelSharedInput {
+input HotelInput {
   city: String
   description: String
   id: Float
@@ -168,7 +168,7 @@ input HotelSharedInput {
 
 """a simple domain entity doubling as a DTO"""
 type HotelTwo {
-  one: HotelShared
+  one: Hotel
 }
 
 type Mutation {
@@ -191,8 +191,8 @@ type Order {
   property: String
 }
 
-type Page_HotelShared {
-  content: [HotelShared]
+type Page_Hotel {
+  content: [Hotel]
   first: Boolean
   last: Boolean
   number: Float
@@ -209,26 +209,75 @@ type Query {
 }
 
 type Servicea {
-  Hotel: HotelServicea
-  TestA: TestAServicea
+  HotelController: HotelControllerServicea
+  TestAController: TestAControllerServicea
 }
 
 type ServiceaMutation {
-  HotelMutation: HotelMutationServicea
-  TestAMutation: TestAMutationServicea
+  HotelControllerMutation: HotelControllerMutationServicea
+  TestAControllerMutation: TestAControllerMutationServicea
 }
 
 type Serviceb {
-  Hotel: HotelServiceb
+  HotelController: HotelControllerServiceb
 }
 
 type ServicebMutation {
-  HotelMutation: HotelMutationServiceb
+  HotelControllerMutation: HotelControllerMutationServiceb
 }
 
 type Sort {
   DEFAULT_DIRECTION: Direction
   orderFor: Order
+}
+
+type TestAControllerMutationServicea {
+  """
+  Path: /example/v1/a/test/
+  Create a hotel resource.Returns the URL of the new resource in the Location header.
+  """
+  createHotel(payload: HotelInput!): Any
+
+  """
+  Path: /example/v1/a/test/{id}
+  Delete a hotel resource.You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.
+  """
+  deleteHotel(params: DeleteHotelParamsServiceaTestAControllerMutationInterplayInput!): Any
+
+  """
+  Path: /example/v1/a/test/{id}
+  Update a hotel resource.You have to provide a valid hotel ID in the URL and in
+  the payload. The ID attribute can not be updated.
+  """
+  updateHotel(params: UpdateHotelParamsServiceaTestAControllerMutationInterplayInput!, payload: HotelInput!): Any
+
+  """
+  Path: /example/v1/a/test/{id}/{one}
+  Update a hotel resource.You have to provide a valid hotel ID in the URL and in
+  the payload. The ID attribute can not be updated.
+  """
+  updateHotel2(params: UpdateHotel2ParamsServiceaTestAControllerMutationInterplayInput!, payload: HotelInput!): Any
+}
+
+type TestAControllerServicea {
+  """
+  Path: /example/v1/a/test/
+  Get a paginated list of all hotels.The list is paginated. You can provide a
+  page number (default 0) and a page size (default 100)
+  """
+  getAllHotel(query: GetAllHotelQueryServiceaTestAControllerInterplayInput): Page_Hotel
+
+  """
+  Path: /example/v1/a/test/{id}
+  Get a single hotel.You have to provide a valid hotel ID.
+  """
+  getHotel(params: GetHotelParamsServiceaTestAControllerInterplayInput!): Hotel
+
+  """
+  Path: /example/v1/a/test/test/{id}
+  Get a single hotel.You have to provide a valid hotel ID.
+  """
+  getTestHotel(params: GetTestHotelParamsInput!): TestAHotel
 }
 
 """a simple domain entity doubling as a DTO"""
@@ -240,59 +289,25 @@ type TestAHotel {
   rating: Float
 }
 
-type TestAMutationServicea {
-  """
-  Path: /example/v1/a/test/
-  Create a hotel resource.Returns the URL of the new resource in the Location header.
-  """
-  createHotel(payload: HotelSharedInput!): Any
+input UpdateHotel2ParamsServiceaTestAControllerMutationInterplayInput {
+  """Some one"""
+  one: Float!
 
-  """
-  Path: /example/v1/a/test/{id}
-  Delete a hotel resource.You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.
-  """
-  deleteHotel(params: DeleteHotelParamsServiceaTestAMutationInterplayInput!): Any
-
-  """
-  Path: /example/v1/a/test/{id}
-  Update a hotel resource.You have to provide a valid hotel ID in the URL and in
-  the payload. The ID attribute can not be updated.
-  """
-  updateHotel(params: UpdateHotelParamsServiceaTestAMutationInterplayInput!, payload: HotelSharedInput!): Any
-}
-
-type TestAServicea {
-  """
-  Path: /example/v1/a/test/
-  Get a paginated list of all hotels.The list is paginated. You can provide a
-  page number (default 0) and a page size (default 100)
-  """
-  getAllHotel(query: GetAllHotelQueryServiceaTestAInterplayInput): Page_HotelShared
-
-  """
-  Path: /example/v1/a/test/{id}
-  Get a single hotel.You have to provide a valid hotel ID.
-  """
-  getHotel(params: GetHotelParamsServiceaTestAInterplayInput!): HotelShared
-
-  """
-  Path: /example/v1/a/test/test/{id}
-  Get a single hotel.You have to provide a valid hotel ID.
-  """
-  getTestHotel(params: GetTestHotelParamsInput!): TestAHotel
-}
-
-input UpdateHotelParamsServiceaHotelMutationInterplayInput {
   """The ID of the existing hotel resource."""
   id: Float!
 }
 
-input UpdateHotelParamsServiceaTestAMutationInterplayInput {
+input UpdateHotelParamsServiceaHotelControllerMutationInterplayInput {
   """The ID of the existing hotel resource."""
   id: Float!
 }
 
-input UpdateHotelParamsServicebHotelMutationInterplayInput {
+input UpdateHotelParamsServiceaTestAControllerMutationInterplayInput {
+  """The ID of the existing hotel resource."""
+  id: Float!
+}
+
+input UpdateHotelParamsServicebHotelControllerMutationInterplayInput {
   """The ID of the existing hotel resource."""
   id: Float!
 }

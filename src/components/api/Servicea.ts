@@ -5,7 +5,7 @@ import * as CommonModel from "../model/Common";
 import * as ServiceaModel from "../model/Servicea";
 import * as SharedModel from "../model/Shared";
 
-export namespace Hotel {
+export namespace HotelController {
   export interface UpdateHotelParams {
     /**
      * The ID of the existing hotel resource.
@@ -65,12 +65,20 @@ export namespace Hotel {
     .build();
 }
 
-export namespace HotelService {
-
-}
-
-export namespace TestA {
+export namespace TestAController {
   export interface UpdateHotelParams {
+    /**
+     * The ID of the existing hotel resource.
+     */
+    id: number;
+  }
+
+  export interface UpdateHotel2Params {
+    /**
+     * Some one
+     */
+    one: number;
+
     /**
      * The ID of the existing hotel resource.
      */
@@ -137,6 +145,11 @@ export namespace TestA {
 
   export const updateHotel = api
     .path((p: UpdateHotelParams) => `/example/v1/a/test/${p.id}`)
+    .request<void, void, SharedModel.Hotel>("put")
+    .build();
+
+  export const updateHotel2 = api
+    .path((p: UpdateHotel2Params) => `/example/v1/a/test/${p.id}/${p.one}`)
     .request<void, void, SharedModel.Hotel>("put")
     .build();
 }

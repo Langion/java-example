@@ -69,7 +69,7 @@ public class TestAController extends AbstractRestHandler {
         public @ResponseBody TestAHotel getTestHotel(
                         @ApiParam(value = "The ID of the hotel.", required = true) @PathVariable("id") Long id,
                         HttpServletRequest request, HttpServletResponse response) throws Exception {
- 
+
                 return null;
         }
 
@@ -79,6 +79,20 @@ public class TestAController extends AbstractRestHandler {
         @ApiOperation(value = "Update a hotel resource.", notes = "You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.")
         public void updateHotel(
                         @ApiParam(value = "The ID of the existing hotel resource.", required = true) @PathVariable("id") Long id,
+                        @RequestBody Hotel hotel, HttpServletRequest request, HttpServletResponse response) {
+                checkResourceFound(this.hotelService.getHotel(id));
+                if (id != hotel.getId())
+                        throw new DataFormatException("ID doesn't match!");
+                this.hotelService.updateHotel(hotel);
+        }
+
+        @RequestMapping(value = "/{id}/{one}", method = RequestMethod.PUT, consumes = { "application/json",
+        "application/xml" }, produces = { "application/json", "application/xml" })
+        @ResponseStatus(HttpStatus.NO_CONTENT)
+        @ApiOperation(value = "Update a hotel resource.", notes = "You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.")
+        public void updateHotel(
+                        @ApiParam(value = "The ID of the existing hotel resource.", required = true) @PathVariable("id") Long id,
+                        @ApiParam(value = "Some one", required = true) @PathVariable("one") Long one,
                         @RequestBody Hotel hotel, HttpServletRequest request, HttpServletResponse response) {
                 checkResourceFound(this.hotelService.getHotel(id));
                 if (id != hotel.getId())

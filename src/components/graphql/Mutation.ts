@@ -11,8 +11,8 @@ export class Mutation {
         type: new graphql.GraphQLObjectType({
           name: "ServiceaMutation",
           fields: {
-            HotelMutation: { type: ServiceaGraphql.HotelMutation, resolve: () => ({}) },
-            TestAMutation: { type: ServiceaGraphql.TestAMutation, resolve: () => ({}) },
+            HotelControllerMutation: { type: ServiceaGraphql.HotelControllerMutation, resolve: () => ({}) },
+            TestAControllerMutation: { type: ServiceaGraphql.TestAControllerMutation, resolve: () => ({}) },
           },
         }),
         resolve: () => ({}),
@@ -21,7 +21,7 @@ export class Mutation {
         type: new graphql.GraphQLObjectType({
           name: "ServicebMutation",
           fields: {
-            HotelMutation: { type: ServicebGraphql.HotelMutation, resolve: () => ({}) },
+            HotelControllerMutation: { type: ServicebGraphql.HotelControllerMutation, resolve: () => ({}) },
           },
         }),
         resolve: () => ({}),

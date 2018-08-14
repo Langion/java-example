@@ -49,24 +49,24 @@
                 "description": null,
                 "fields": [
                     {
-                        "name": "Hotel",
+                        "name": "HotelController",
                         "description": null,
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "HotelServicea",
+                            "name": "HotelControllerServicea",
                             "ofType": null
                         },
                         "isDeprecated": false,
                         "deprecationReason": null
                     },
                     {
-                        "name": "TestA",
+                        "name": "TestAController",
                         "description": null,
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "TestAServicea",
+                            "name": "TestAControllerServicea",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -80,7 +80,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "HotelServicea",
+                "name": "HotelControllerServicea",
                 "description": null,
                 "fields": [
                     {
@@ -100,7 +100,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Page_HotelShared",
+                            "name": "Page_Hotel",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -127,7 +127,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "HotelShared",
+                            "name": "Hotel",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -190,7 +190,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "Page_HotelShared",
+                "name": "Page_Hotel",
                 "description": "",
                 "fields": [
                     {
@@ -202,7 +202,7 @@
                             "name": null,
                             "ofType": {
                                 "kind": "OBJECT",
-                                "name": "HotelShared",
+                                "name": "Hotel",
                                 "ofType": null
                             }
                         },
@@ -313,7 +313,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "HotelShared",
+                "name": "Hotel",
                 "description": "a simple domain entity doubling as a DTO",
                 "fields": [
                     {
@@ -599,7 +599,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "TestAServicea",
+                "name": "TestAControllerServicea",
                 "description": null,
                 "fields": [
                     {
@@ -611,7 +611,7 @@
                                 "description": null,
                                 "type": {
                                     "kind": "INPUT_OBJECT",
-                                    "name": "GetAllHotelQueryServiceaTestAInterplayInput",
+                                    "name": "GetAllHotelQueryServiceaTestAControllerInterplayInput",
                                     "ofType": null
                                 },
                                 "defaultValue": null
@@ -619,7 +619,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Page_HotelShared",
+                            "name": "Page_Hotel",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -637,7 +637,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "GetHotelParamsServiceaTestAInterplayInput",
+                                        "name": "GetHotelParamsServiceaTestAControllerInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -646,7 +646,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "HotelShared",
+                            "name": "Hotel",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -687,7 +687,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "GetAllHotelQueryServiceaTestAInterplayInput",
+                "name": "GetAllHotelQueryServiceaTestAControllerInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
@@ -726,7 +726,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "GetHotelParamsServiceaTestAInterplayInput",
+                "name": "GetHotelParamsServiceaTestAControllerInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
@@ -851,12 +851,12 @@
                 "description": null,
                 "fields": [
                     {
-                        "name": "Hotel",
+                        "name": "HotelController",
                         "description": null,
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "HotelServiceb",
+                            "name": "HotelControllerServiceb",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -870,7 +870,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "HotelServiceb",
+                "name": "HotelControllerServiceb",
                 "description": null,
                 "fields": [
                     {
@@ -882,7 +882,7 @@
                                 "description": null,
                                 "type": {
                                     "kind": "INPUT_OBJECT",
-                                    "name": "GetAllHotelQueryServicebHotelInterplayInput",
+                                    "name": "GetAllHotelQueryServicebHotelControllerInterplayInput",
                                     "ofType": null
                                 },
                                 "defaultValue": null
@@ -890,7 +890,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Page_HotelShared",
+                            "name": "Page_Hotel",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -908,7 +908,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "GetHotelParamsServicebHotelInterplayInput",
+                                        "name": "GetHotelParamsServicebHotelControllerInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -917,7 +917,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "HotelShared",
+                            "name": "Hotel",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -958,7 +958,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "GetAllHotelQueryServicebHotelInterplayInput",
+                "name": "GetAllHotelQueryServicebHotelControllerInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
@@ -997,7 +997,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "GetHotelParamsServicebHotelInterplayInput",
+                "name": "GetHotelParamsServicebHotelControllerInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
@@ -1056,7 +1056,7 @@
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "HotelShared",
+                            "name": "Hotel",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1109,24 +1109,24 @@
                 "description": null,
                 "fields": [
                     {
-                        "name": "HotelMutation",
+                        "name": "HotelControllerMutation",
                         "description": null,
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "HotelMutationServicea",
+                            "name": "HotelControllerMutationServicea",
                             "ofType": null
                         },
                         "isDeprecated": false,
                         "deprecationReason": null
                     },
                     {
-                        "name": "TestAMutation",
+                        "name": "TestAControllerMutation",
                         "description": null,
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "TestAMutationServicea",
+                            "name": "TestAControllerMutationServicea",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1140,7 +1140,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "HotelMutationServicea",
+                "name": "HotelControllerMutationServicea",
                 "description": null,
                 "fields": [
                     {
@@ -1155,7 +1155,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelSharedInput",
+                                        "name": "HotelInput",
                                         "ofType": null
                                     }
                                 },
@@ -1182,7 +1182,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "DeleteHotelParamsServiceaHotelMutationInterplayInput",
+                                        "name": "DeleteHotelParamsServiceaHotelControllerMutationInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -1209,7 +1209,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "UpdateHotelParamsServiceaHotelMutationInterplayInput",
+                                        "name": "UpdateHotelParamsServiceaHotelControllerMutationInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -1223,7 +1223,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelSharedInput",
+                                        "name": "HotelInput",
                                         "ofType": null
                                     }
                                 },
@@ -1246,7 +1246,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "HotelSharedInput",
+                "name": "HotelInput",
                 "description": "a simple domain entity doubling as a DTO",
                 "fields": null,
                 "inputFields": [
@@ -1317,7 +1317,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "DeleteHotelParamsServiceaHotelMutationInterplayInput",
+                "name": "DeleteHotelParamsServiceaHotelControllerMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
@@ -1342,7 +1342,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "UpdateHotelParamsServiceaHotelMutationInterplayInput",
+                "name": "UpdateHotelParamsServiceaHotelControllerMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
@@ -1367,7 +1367,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "TestAMutationServicea",
+                "name": "TestAControllerMutationServicea",
                 "description": null,
                 "fields": [
                     {
@@ -1382,7 +1382,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelSharedInput",
+                                        "name": "HotelInput",
                                         "ofType": null
                                     }
                                 },
@@ -1409,7 +1409,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "DeleteHotelParamsServiceaTestAMutationInterplayInput",
+                                        "name": "DeleteHotelParamsServiceaTestAControllerMutationInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -1436,7 +1436,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "UpdateHotelParamsServiceaTestAMutationInterplayInput",
+                                        "name": "UpdateHotelParamsServiceaTestAControllerMutationInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -1450,7 +1450,48 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelSharedInput",
+                                        "name": "HotelInput",
+                                        "ofType": null
+                                    }
+                                },
+                                "defaultValue": null
+                            }
+                        ],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Any",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "updateHotel2",
+                        "description": "Path: /example/v1/a/test/{id}/{one}\nUpdate a hotel resource.You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.",
+                        "args": [
+                            {
+                                "name": "params",
+                                "description": null,
+                                "type": {
+                                    "kind": "NON_NULL",
+                                    "name": null,
+                                    "ofType": {
+                                        "kind": "INPUT_OBJECT",
+                                        "name": "UpdateHotel2ParamsServiceaTestAControllerMutationInterplayInput",
+                                        "ofType": null
+                                    }
+                                },
+                                "defaultValue": null
+                            },
+                            {
+                                "name": "payload",
+                                "description": null,
+                                "type": {
+                                    "kind": "NON_NULL",
+                                    "name": null,
+                                    "ofType": {
+                                        "kind": "INPUT_OBJECT",
+                                        "name": "HotelInput",
                                         "ofType": null
                                     }
                                 },
@@ -1473,7 +1514,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "DeleteHotelParamsServiceaTestAMutationInterplayInput",
+                "name": "DeleteHotelParamsServiceaTestAControllerMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
@@ -1498,10 +1539,49 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "UpdateHotelParamsServiceaTestAMutationInterplayInput",
+                "name": "UpdateHotelParamsServiceaTestAControllerMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
+                    {
+                        "name": "id",
+                        "description": "The ID of the existing hotel resource.",
+                        "type": {
+                            "kind": "NON_NULL",
+                            "name": null,
+                            "ofType": {
+                                "kind": "SCALAR",
+                                "name": "Float",
+                                "ofType": null
+                            }
+                        },
+                        "defaultValue": null
+                    }
+                ],
+                "interfaces": null,
+                "enumValues": null,
+                "possibleTypes": null
+            },
+            {
+                "kind": "INPUT_OBJECT",
+                "name": "UpdateHotel2ParamsServiceaTestAControllerMutationInterplayInput",
+                "description": "",
+                "fields": null,
+                "inputFields": [
+                    {
+                        "name": "one",
+                        "description": "Some one",
+                        "type": {
+                            "kind": "NON_NULL",
+                            "name": null,
+                            "ofType": {
+                                "kind": "SCALAR",
+                                "name": "Float",
+                                "ofType": null
+                            }
+                        },
+                        "defaultValue": null
+                    },
                     {
                         "name": "id",
                         "description": "The ID of the existing hotel resource.",
@@ -1527,12 +1607,12 @@
                 "description": null,
                 "fields": [
                     {
-                        "name": "HotelMutation",
+                        "name": "HotelControllerMutation",
                         "description": null,
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "HotelMutationServiceb",
+                            "name": "HotelControllerMutationServiceb",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1546,7 +1626,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "HotelMutationServiceb",
+                "name": "HotelControllerMutationServiceb",
                 "description": null,
                 "fields": [
                     {
@@ -1561,7 +1641,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelSharedInput",
+                                        "name": "HotelInput",
                                         "ofType": null
                                     }
                                 },
@@ -1588,7 +1668,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "DeleteHotelParamsServicebHotelMutationInterplayInput",
+                                        "name": "DeleteHotelParamsServicebHotelControllerMutationInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -1615,7 +1695,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "UpdateHotelParamsServicebHotelMutationInterplayInput",
+                                        "name": "UpdateHotelParamsServicebHotelControllerMutationInterplayInput",
                                         "ofType": null
                                     }
                                 },
@@ -1629,7 +1709,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelSharedInput",
+                                        "name": "HotelInput",
                                         "ofType": null
                                     }
                                 },
@@ -1652,7 +1732,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "DeleteHotelParamsServicebHotelMutationInterplayInput",
+                "name": "DeleteHotelParamsServicebHotelControllerMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
@@ -1677,7 +1757,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "UpdateHotelParamsServicebHotelMutationInterplayInput",
+                "name": "UpdateHotelParamsServicebHotelControllerMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [

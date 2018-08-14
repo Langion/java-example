@@ -11,8 +11,8 @@ export class Query {
         type: new graphql.GraphQLObjectType({
           name: "Servicea",
           fields: {
-            Hotel: { type: ServiceaGraphql.Hotel, resolve: () => ({}) },
-            TestA: { type: ServiceaGraphql.TestA, resolve: () => ({}) },
+            HotelController: { type: ServiceaGraphql.HotelController, resolve: () => ({}) },
+            TestAController: { type: ServiceaGraphql.TestAController, resolve: () => ({}) },
           },
         }),
         resolve: () => ({}),
@@ -21,7 +21,7 @@ export class Query {
         type: new graphql.GraphQLObjectType({
           name: "Serviceb",
           fields: {
-            Hotel: { type: ServicebGraphql.Hotel, resolve: () => ({}) },
+            HotelController: { type: ServicebGraphql.HotelController, resolve: () => ({}) },
           },
         }),
         resolve: () => ({}),

@@ -1,12 +1,12 @@
-import { RequestData, Resolver } from "@langion/apira";
-import fetch from "node-fetch";
+import { RequestData, Resolver, ResponseData } from "@langion/apira";
+import fetch, { Response as FetchResponse } from "node-fetch";
 
-export class ServiceRequest extends Resolver<void> {
+export class ServiceRequest extends Resolver<void, FetchResponse> {
     protected basePath = "http://localhost:8090";
 
-    protected request: <Response, Query, Payload, Params>(
+    public request<Response, Query, Payload, Params>(
         data: RequestData<Query, Payload, Params, void>,
-    ) => Promise<Response> = (data) => {
+    ): Promise<ResponseData<Response, FetchResponse>> {
         const request = fetch(data.url, {
             method: data.method,
             body: JSON.stringify(data.request.payload),
@@ -16,11 +16,16 @@ export class ServiceRequest extends Resolver<void> {
             },
         });
 
-        const result = request.then((v) => v.json()).catch((e) => console.log(e));
+        const result = request.then((d) => d.json().then((response) => ({ data: d, response })));
 
-        return result.then((v) => {
-            console.log(v);
-            return v;
-        });
+        return result
+            .then((v) => {
+                console.log(v);
+                return v;
+            })
+            .catch((e) => {
+                console.log(e);
+                return e;
+            });
     }
 }

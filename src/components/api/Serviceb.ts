@@ -5,7 +5,7 @@ import * as CommonModel from "../model/Common";
 import * as ServicebModel from "../model/Serviceb";
 import * as SharedModel from "../model/Shared";
 
-export namespace Hotel {
+export namespace HotelController {
   export interface UpdateHotelParams {
     /**
      * The ID of the existing hotel resource.
@@ -75,8 +75,4 @@ export namespace Hotel {
     .path((p: UpdateHotelParams) => `/example/v1/hotels/${p.id}`)
     .request<void, void, SharedModel.Hotel>("put")
     .build();
-}
-
-export namespace HotelService {
-
 }
