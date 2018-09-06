@@ -6,27 +6,6 @@ import * as ServicebModel from "../model/Serviceb";
 import * as SharedModel from "../model/Shared";
 
 export namespace HotelController {
-  export interface UpdateHotelParams {
-    /**
-     * The ID of the existing hotel resource.
-     */
-    id: number;
-  }
-
-  export interface GetHotelParams {
-    /**
-     * The ID of the hotel.
-     */
-    id: number;
-  }
-
-  export interface GetHotelTwoParams {
-    /**
-     * The ID of the hotel.
-     */
-    id: number;
-  }
-
   export interface DeleteHotelParams {
     /**
      * The ID of the existing hotel resource.
@@ -44,6 +23,27 @@ export namespace HotelController {
      * The page number (zero-based)
      */
     page?: number;
+  }
+
+  export interface GetHotelParams {
+    /**
+     * The ID of the hotel.
+     */
+    id: number;
+  }
+
+  export interface GetHotelTwoParams {
+    /**
+     * The ID of the hotel.
+     */
+    id: number;
+  }
+
+  export interface UpdateHotelParams {
+    /**
+     * The ID of the existing hotel resource.
+     */
+    id: number;
   }
 
   export const createHotel = api

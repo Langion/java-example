@@ -6,20 +6,6 @@ import * as ServiceaModel from "../model/Servicea";
 import * as SharedModel from "../model/Shared";
 
 export namespace HotelController {
-  export interface UpdateHotelParams {
-    /**
-     * The ID of the existing hotel resource.
-     */
-    id: number;
-  }
-
-  export interface GetHotelParams {
-    /**
-     * The ID of the hotel.
-     */
-    id: number;
-  }
-
   export interface DeleteHotelParams {
     /**
      * The ID of the existing hotel resource.
@@ -37,6 +23,20 @@ export namespace HotelController {
      * The page number (zero-based)
      */
     page?: number;
+  }
+
+  export interface GetHotelParams {
+    /**
+     * The ID of the hotel.
+     */
+    id: number;
+  }
+
+  export interface UpdateHotelParams {
+    /**
+     * The ID of the existing hotel resource.
+     */
+    id: number;
   }
 
   export const createHotel = api
@@ -66,32 +66,6 @@ export namespace HotelController {
 }
 
 export namespace TestAController {
-  export interface UpdateHotelParams {
-    /**
-     * The ID of the existing hotel resource.
-     */
-    id: number;
-  }
-
-  export interface UpdateHotel2Params {
-    /**
-     * Some one
-     */
-    one: number;
-
-    /**
-     * The ID of the existing hotel resource.
-     */
-    id: number;
-  }
-
-  export interface GetHotelParams {
-    /**
-     * The ID of the hotel.
-     */
-    id: number;
-  }
-
   export interface DeleteHotelParams {
     /**
      * The ID of the existing hotel resource.
@@ -111,9 +85,35 @@ export namespace TestAController {
     page?: number;
   }
 
+  export interface GetHotelParams {
+    /**
+     * The ID of the hotel.
+     */
+    id: number;
+  }
+
   export interface GetTestHotelParams {
     /**
      * The ID of the hotel.
+     */
+    id: number;
+  }
+
+  export interface UpdateHotel2Params {
+    /**
+     * Some one
+     */
+    one: number;
+
+    /**
+     * The ID of the existing hotel resource.
+     */
+    id: number;
+  }
+
+  export interface UpdateHotelParams {
+    /**
+     * The ID of the existing hotel resource.
      */
     id: number;
   }

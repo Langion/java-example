@@ -7,67 +7,6 @@ import * as ServiceaGql from "../gql/Servicea";
 import * as SharedGql from "../gql/Shared";
 
 export namespace HotelControllerInterplay {
-  export const UpdateHotelParams = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
-    function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
-    function UpdateHotelParams(isInput: any) {
-      let name = isInput ? `UpdateHotelParamsInput` : `UpdateHotelParams`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            id: {
-              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
-              description: `The ID of the existing hotel resource.`,
-            },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return UpdateHotelParams;
-  })();
-
-  export const GetHotelParams = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
-    function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
-    function GetHotelParams(isInput: any) {
-      let name = isInput ? `GetHotelParamsInput` : `GetHotelParams`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            id: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `The ID of the hotel.` },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return GetHotelParams;
-  })();
-
   export const DeleteHotelParams = (() => {
     const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 
@@ -132,6 +71,67 @@ export namespace HotelControllerInterplay {
 
     return GetAllHotelQuery;
   })();
+
+  export const GetHotelParams = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
+    function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
+    function GetHotelParams(isInput: any) {
+      let name = isInput ? `GetHotelParamsInput` : `GetHotelParams`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            id: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `The ID of the hotel.` },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return GetHotelParams;
+  })();
+
+  export const UpdateHotelParams = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
+    function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
+    function UpdateHotelParams(isInput: any) {
+      let name = isInput ? `UpdateHotelParamsInput` : `UpdateHotelParams`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            id: {
+              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
+              description: `The ID of the existing hotel resource.`,
+            },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return UpdateHotelParams;
+  })();
 }
 
 export const HotelController = new graphql.GraphQLObjectType({
@@ -159,71 +159,6 @@ export const HotelController = new graphql.GraphQLObjectType({
 });
 
 export namespace HotelControllerMutationInterplay {
-  export const UpdateHotelParams = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
-    function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
-    function UpdateHotelParams(isInput: any) {
-      let name = isInput
-        ? `UpdateHotelParamsServiceaHotelControllerMutationInterplayInput`
-        : `UpdateHotelParamsServiceaHotelControllerMutationInterplay`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            id: {
-              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
-              description: `The ID of the existing hotel resource.`,
-            },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return UpdateHotelParams;
-  })();
-
-  export const GetHotelParams = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
-    function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
-    function GetHotelParams(isInput: any) {
-      let name = isInput
-        ? `GetHotelParamsServiceaHotelControllerMutationInterplayInput`
-        : `GetHotelParamsServiceaHotelControllerMutationInterplay`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            id: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `The ID of the hotel.` },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return GetHotelParams;
-  })();
-
   export const DeleteHotelParams = (() => {
     const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 
@@ -292,6 +227,71 @@ export namespace HotelControllerMutationInterplay {
 
     return GetAllHotelQuery;
   })();
+
+  export const GetHotelParams = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
+    function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
+    function GetHotelParams(isInput: any) {
+      let name = isInput
+        ? `GetHotelParamsServiceaHotelControllerMutationInterplayInput`
+        : `GetHotelParamsServiceaHotelControllerMutationInterplay`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            id: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `The ID of the hotel.` },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return GetHotelParams;
+  })();
+
+  export const UpdateHotelParams = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
+    function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
+    function UpdateHotelParams(isInput: any) {
+      let name = isInput
+        ? `UpdateHotelParamsServiceaHotelControllerMutationInterplayInput`
+        : `UpdateHotelParamsServiceaHotelControllerMutationInterplay`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            id: {
+              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
+              description: `The ID of the existing hotel resource.`,
+            },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return UpdateHotelParams;
+  })();
 }
 
 export const HotelControllerMutation = new graphql.GraphQLObjectType({
@@ -329,104 +329,6 @@ export const HotelControllerMutation = new graphql.GraphQLObjectType({
 });
 
 export namespace TestAControllerInterplay {
-  export const UpdateHotelParams = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
-    function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
-    function UpdateHotelParams(isInput: any) {
-      let name = isInput
-        ? `UpdateHotelParamsServiceaTestAControllerInterplayInput`
-        : `UpdateHotelParamsServiceaTestAControllerInterplay`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            id: {
-              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
-              description: `The ID of the existing hotel resource.`,
-            },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return UpdateHotelParams;
-  })();
-
-  export const UpdateHotel2Params = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function UpdateHotel2Params(isInput: true): graphql.GraphQLInputObjectType;
-    function UpdateHotel2Params(isInput: false): graphql.GraphQLObjectType;
-    function UpdateHotel2Params(isInput: any) {
-      let name = isInput ? `UpdateHotel2ParamsInput` : `UpdateHotel2Params`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            one: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `Some one` },
-            id: {
-              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
-              description: `The ID of the existing hotel resource.`,
-            },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return UpdateHotel2Params;
-  })();
-
-  export const GetHotelParams = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
-    function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
-    function GetHotelParams(isInput: any) {
-      let name = isInput
-        ? `GetHotelParamsServiceaTestAControllerInterplayInput`
-        : `GetHotelParamsServiceaTestAControllerInterplay`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            id: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `The ID of the hotel.` },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return GetHotelParams;
-  })();
-
   export const DeleteHotelParams = (() => {
     const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 
@@ -496,6 +398,37 @@ export namespace TestAControllerInterplay {
     return GetAllHotelQuery;
   })();
 
+  export const GetHotelParams = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
+    function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
+    function GetHotelParams(isInput: any) {
+      let name = isInput
+        ? `GetHotelParamsServiceaTestAControllerInterplayInput`
+        : `GetHotelParamsServiceaTestAControllerInterplay`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            id: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `The ID of the hotel.` },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return GetHotelParams;
+  })();
+
   export const GetTestHotelParams = (() => {
     const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 
@@ -523,6 +456,73 @@ export namespace TestAControllerInterplay {
     }
 
     return GetTestHotelParams;
+  })();
+
+  export const UpdateHotel2Params = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function UpdateHotel2Params(isInput: true): graphql.GraphQLInputObjectType;
+    function UpdateHotel2Params(isInput: false): graphql.GraphQLObjectType;
+    function UpdateHotel2Params(isInput: any) {
+      let name = isInput ? `UpdateHotel2ParamsInput` : `UpdateHotel2Params`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            one: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `Some one` },
+            id: {
+              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
+              description: `The ID of the existing hotel resource.`,
+            },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return UpdateHotel2Params;
+  })();
+
+  export const UpdateHotelParams = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
+    function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
+    function UpdateHotelParams(isInput: any) {
+      let name = isInput
+        ? `UpdateHotelParamsServiceaTestAControllerInterplayInput`
+        : `UpdateHotelParamsServiceaTestAControllerInterplay`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            id: {
+              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
+              description: `The ID of the existing hotel resource.`,
+            },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return UpdateHotelParams;
   })();
 }
 
@@ -560,106 +560,6 @@ export const TestAController = new graphql.GraphQLObjectType({
 });
 
 export namespace TestAControllerMutationInterplay {
-  export const UpdateHotelParams = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
-    function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
-    function UpdateHotelParams(isInput: any) {
-      let name = isInput
-        ? `UpdateHotelParamsServiceaTestAControllerMutationInterplayInput`
-        : `UpdateHotelParamsServiceaTestAControllerMutationInterplay`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            id: {
-              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
-              description: `The ID of the existing hotel resource.`,
-            },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return UpdateHotelParams;
-  })();
-
-  export const UpdateHotel2Params = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function UpdateHotel2Params(isInput: true): graphql.GraphQLInputObjectType;
-    function UpdateHotel2Params(isInput: false): graphql.GraphQLObjectType;
-    function UpdateHotel2Params(isInput: any) {
-      let name = isInput
-        ? `UpdateHotel2ParamsServiceaTestAControllerMutationInterplayInput`
-        : `UpdateHotel2ParamsServiceaTestAControllerMutationInterplay`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            one: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `Some one` },
-            id: {
-              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
-              description: `The ID of the existing hotel resource.`,
-            },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return UpdateHotel2Params;
-  })();
-
-  export const GetHotelParams = (() => {
-    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
-
-    function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
-    function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
-    function GetHotelParams(isInput: any) {
-      let name = isInput
-        ? `GetHotelParamsServiceaTestAControllerMutationInterplayInput`
-        : `GetHotelParamsServiceaTestAControllerMutationInterplay`;
-
-      name = name.replace(/[\[\]]/g, "");
-
-      if (!cache[name]) {
-        const c = {
-          name,
-          description: ``,
-          fields: () => ({
-            id: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `The ID of the hotel.` },
-          }),
-        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
-
-        cache[name] = isInput
-          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
-          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
-      }
-      return cache[name];
-    }
-
-    return GetHotelParams;
-  })();
-
   export const DeleteHotelParams = (() => {
     const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 
@@ -729,6 +629,37 @@ export namespace TestAControllerMutationInterplay {
     return GetAllHotelQuery;
   })();
 
+  export const GetHotelParams = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function GetHotelParams(isInput: true): graphql.GraphQLInputObjectType;
+    function GetHotelParams(isInput: false): graphql.GraphQLObjectType;
+    function GetHotelParams(isInput: any) {
+      let name = isInput
+        ? `GetHotelParamsServiceaTestAControllerMutationInterplayInput`
+        : `GetHotelParamsServiceaTestAControllerMutationInterplay`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            id: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `The ID of the hotel.` },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return GetHotelParams;
+  })();
+
   export const GetTestHotelParams = (() => {
     const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
 
@@ -758,6 +689,75 @@ export namespace TestAControllerMutationInterplay {
     }
 
     return GetTestHotelParams;
+  })();
+
+  export const UpdateHotel2Params = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function UpdateHotel2Params(isInput: true): graphql.GraphQLInputObjectType;
+    function UpdateHotel2Params(isInput: false): graphql.GraphQLObjectType;
+    function UpdateHotel2Params(isInput: any) {
+      let name = isInput
+        ? `UpdateHotel2ParamsServiceaTestAControllerMutationInterplayInput`
+        : `UpdateHotel2ParamsServiceaTestAControllerMutationInterplay`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            one: { type: new graphql.GraphQLNonNull(graphql.GraphQLFloat), description: `Some one` },
+            id: {
+              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
+              description: `The ID of the existing hotel resource.`,
+            },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return UpdateHotel2Params;
+  })();
+
+  export const UpdateHotelParams = (() => {
+    const cache: Record<string, graphql.GraphQLObjectType | graphql.GraphQLInputObjectType> = {};
+
+    function UpdateHotelParams(isInput: true): graphql.GraphQLInputObjectType;
+    function UpdateHotelParams(isInput: false): graphql.GraphQLObjectType;
+    function UpdateHotelParams(isInput: any) {
+      let name = isInput
+        ? `UpdateHotelParamsServiceaTestAControllerMutationInterplayInput`
+        : `UpdateHotelParamsServiceaTestAControllerMutationInterplay`;
+
+      name = name.replace(/[\[\]]/g, "");
+
+      if (!cache[name]) {
+        const c = {
+          name,
+          description: ``,
+          fields: () => ({
+            id: {
+              type: new graphql.GraphQLNonNull(graphql.GraphQLFloat),
+              description: `The ID of the existing hotel resource.`,
+            },
+          }),
+        } as graphql.GraphQLObjectTypeConfig<any, any> | graphql.GraphQLInputObjectTypeConfig;
+
+        cache[name] = isInput
+          ? new graphql.GraphQLInputObjectType(c as graphql.GraphQLInputObjectTypeConfig)
+          : new graphql.GraphQLObjectType(c as graphql.GraphQLObjectTypeConfig<any, any>);
+      }
+      return cache[name];
+    }
+
+    return UpdateHotelParams;
   })();
 }
 
