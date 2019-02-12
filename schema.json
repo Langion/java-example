@@ -85,7 +85,7 @@
                 "fields": [
                     {
                         "name": "getAllHotel",
-                        "description": "Path: /example/v1/hotels/\nGet a paginated list of all hotels.The list is paginated. You can provide a page number (default 0) and a page size (default 100)",
+                        "description": "Path: /example/v1/hotels/\nGet a paginated list of all hotels. The list is paginated. You can provide a page number (default 0) and a page size (default 100)",
                         "args": [
                             {
                                 "name": "query",
@@ -108,7 +108,7 @@
                     },
                     {
                         "name": "getHotel",
-                        "description": "Path: /example/v1/hotels/{id}\nGet a single hotel.You have to provide a valid hotel ID.",
+                        "description": "Path: /example/v1/hotels/{id}\nGet a single hotel. You have to provide a valid hotel ID.",
                         "args": [
                             {
                                 "name": "params",
@@ -146,6 +146,16 @@
                 "fields": null,
                 "inputFields": [
                     {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
                         "name": "size",
                         "description": "Tha page size",
                         "type": {
@@ -180,6 +190,16 @@
             },
             {
                 "kind": "SCALAR",
+                "name": "Raw",
+                "description": "Сырое значение как есть",
+                "fields": null,
+                "inputFields": null,
+                "interfaces": null,
+                "enumValues": null,
+                "possibleTypes": null
+            },
+            {
+                "kind": "SCALAR",
                 "name": "Float",
                 "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). ",
                 "fields": null,
@@ -191,8 +211,20 @@
             {
                 "kind": "OBJECT",
                 "name": "Page_Hotel",
-                "description": "",
+                "description": "@addedFrom servicea",
                 "fields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
                     {
                         "name": "content",
                         "description": "",
@@ -314,8 +346,20 @@
             {
                 "kind": "OBJECT",
                 "name": "Hotel",
-                "description": "a simple domain entity doubling as a DTO",
+                "description": " a simple domain entity doubling as a DTO  ",
                 "fields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
                     {
                         "name": "city",
                         "description": "",
@@ -405,8 +449,20 @@
             {
                 "kind": "OBJECT",
                 "name": "Sort",
-                "description": "",
+                "description": "@addedFrom servicea",
                 "fields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
                     {
                         "name": "DEFAULT_DIRECTION",
                         "description": "",
@@ -463,8 +519,20 @@
             {
                 "kind": "OBJECT",
                 "name": "Order",
-                "description": "",
+                "description": "@addedFrom servicea",
                 "fields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
                     {
                         "name": "ascending",
                         "description": "",
@@ -579,6 +647,16 @@
                 "fields": null,
                 "inputFields": [
                     {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
                         "name": "id",
                         "description": "The ID of the hotel.",
                         "type": {
@@ -604,7 +682,7 @@
                 "fields": [
                     {
                         "name": "getAllHotel",
-                        "description": "Path: /example/v1/a/test/\nGet a paginated list of all hotels.The list is paginated. You can provide a page number (default 0) and a page size (default 100)",
+                        "description": "Path: /example/v1/a/test/\nGet a paginated list of all hotels. The list is paginated. You can provide a page number (default 0) and a page size (default 100)",
                         "args": [
                             {
                                 "name": "query",
@@ -627,7 +705,7 @@
                     },
                     {
                         "name": "getHotel",
-                        "description": "Path: /example/v1/a/test/{id}\nGet a single hotel.You have to provide a valid hotel ID.",
+                        "description": "Path: /example/v1/a/test/{id}\nGet a single hotel. You have to provide a valid hotel ID.",
                         "args": [
                             {
                                 "name": "params",
@@ -654,7 +732,7 @@
                     },
                     {
                         "name": "getTestHotel",
-                        "description": "Path: /example/v1/a/test/test/{id}\nGet a single hotel.You have to provide a valid hotel ID.",
+                        "description": "Path: /example/v1/a/test/test/{id}\nGet a single hotel. You have to provide a valid hotel ID.",
                         "args": [
                             {
                                 "name": "params",
@@ -691,6 +769,16 @@
                 "description": "",
                 "fields": null,
                 "inputFields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
                     {
                         "name": "size",
                         "description": "Tha page size",
@@ -731,6 +819,16 @@
                 "fields": null,
                 "inputFields": [
                     {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
                         "name": "id",
                         "description": "The ID of the hotel.",
                         "type": {
@@ -756,6 +854,16 @@
                 "fields": null,
                 "inputFields": [
                     {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
                         "name": "id",
                         "description": "The ID of the hotel.",
                         "type": {
@@ -777,8 +885,20 @@
             {
                 "kind": "OBJECT",
                 "name": "TestAHotel",
-                "description": "a simple domain entity doubling as a DTO",
+                "description": " a simple domain entity doubling as a DTO  ",
                 "fields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
                     {
                         "name": "city",
                         "description": "",
@@ -875,7 +995,7 @@
                 "fields": [
                     {
                         "name": "getAllHotel",
-                        "description": "Path: /example/v1/hotels/\nGet a paginated list of all hotels.The list is paginated. You can provide a page number (default 0) and a page size (default 100)",
+                        "description": "Path: /example/v1/hotels/\nGet a paginated list of all hotels. The list is paginated. You can provide a page number (default 0) and a page size (default 100)",
                         "args": [
                             {
                                 "name": "query",
@@ -890,7 +1010,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Page_Hotel",
+                            "name": "Page_HotelServiceb",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -898,7 +1018,7 @@
                     },
                     {
                         "name": "getHotel",
-                        "description": "Path: /example/v1/hotels/{id}\nGet a single hotel.You have to provide a valid hotel ID.",
+                        "description": "Path: /example/v1/hotels/{id}\nGet a single hotel. You have to provide a valid hotel ID.",
                         "args": [
                             {
                                 "name": "params",
@@ -917,7 +1037,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Hotel",
+                            "name": "HotelServiceb",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -925,7 +1045,7 @@
                     },
                     {
                         "name": "getHotelTwo",
-                        "description": "Path: /example/v1/hotels/two/{id}\nGet a single hotel.You have to provide a valid hotel ID.",
+                        "description": "Path: /example/v1/hotels/two/{id}\nGet a single hotel. You have to provide a valid hotel ID.",
                         "args": [
                             {
                                 "name": "params",
@@ -963,6 +1083,16 @@
                 "fields": null,
                 "inputFields": [
                     {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
                         "name": "size",
                         "description": "Tha page size",
                         "type": {
@@ -996,11 +1126,239 @@
                 "possibleTypes": null
             },
             {
+                "kind": "OBJECT",
+                "name": "Page_HotelServiceb",
+                "description": "@addedFrom servicea",
+                "fields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "content",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "LIST",
+                            "name": null,
+                            "ofType": {
+                                "kind": "OBJECT",
+                                "name": "HotelServiceb",
+                                "ofType": null
+                            }
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "first",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Boolean",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "last",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Boolean",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "number",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "numberOfElements",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "size",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "sort",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "OBJECT",
+                            "name": "Sort",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "totalElements",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "totalPages",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    }
+                ],
+                "inputFields": null,
+                "interfaces": [],
+                "enumValues": null,
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "HotelServiceb",
+                "description": " a simple domain entity doubling as a DTO  ",
+                "fields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "city",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "String",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "description",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "String",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "id",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "name",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "String",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "rating",
+                        "description": "",
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    }
+                ],
+                "inputFields": null,
+                "interfaces": [],
+                "enumValues": null,
+                "possibleTypes": null
+            },
+            {
                 "kind": "INPUT_OBJECT",
                 "name": "GetHotelParamsServicebHotelControllerInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
                     {
                         "name": "id",
                         "description": "The ID of the hotel.",
@@ -1027,6 +1385,16 @@
                 "fields": null,
                 "inputFields": [
                     {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
                         "name": "id",
                         "description": "The ID of the hotel.",
                         "type": {
@@ -1048,15 +1416,27 @@
             {
                 "kind": "OBJECT",
                 "name": "HotelTwo",
-                "description": "a simple domain entity doubling as a DTO",
+                "description": " a simple domain entity doubling as a DTO  ",
                 "fields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
                     {
                         "name": "one",
                         "description": "",
                         "args": [],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Hotel",
+                            "name": "HotelServiceb",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1145,7 +1525,7 @@
                 "fields": [
                     {
                         "name": "createHotel",
-                        "description": "Path: /example/v1/hotels/\nCreate a hotel resource.Returns the URL of the new resource in the Location header.",
+                        "description": "Path: /example/v1/hotels/\nCreate a hotel resource. Returns the URL of the new resource in the Location header.",
                         "args": [
                             {
                                 "name": "payload",
@@ -1164,7 +1544,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1172,7 +1552,7 @@
                     },
                     {
                         "name": "deleteHotel",
-                        "description": "Path: /example/v1/hotels/{id}\nDelete a hotel resource.You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.",
+                        "description": "Path: /example/v1/hotels/{id}\nDelete a hotel resource. You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.",
                         "args": [
                             {
                                 "name": "params",
@@ -1191,7 +1571,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1199,7 +1579,7 @@
                     },
                     {
                         "name": "updateHotel",
-                        "description": "Path: /example/v1/hotels/{id}\nUpdate a hotel resource.You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.",
+                        "description": "Path: /example/v1/hotels/{id}\nUpdate a hotel resource. You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.",
                         "args": [
                             {
                                 "name": "params",
@@ -1232,7 +1612,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1247,9 +1627,19 @@
             {
                 "kind": "INPUT_OBJECT",
                 "name": "HotelInput",
-                "description": "a simple domain entity doubling as a DTO",
+                "description": " a simple domain entity doubling as a DTO  ",
                 "fields": null,
                 "inputFields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
                     {
                         "name": "city",
                         "description": "",
@@ -1306,21 +1696,21 @@
                 "possibleTypes": null
             },
             {
-                "kind": "SCALAR",
-                "name": "Any",
-                "description": "Любое значение которое не получилось сериализовать",
-                "fields": null,
-                "inputFields": null,
-                "interfaces": null,
-                "enumValues": null,
-                "possibleTypes": null
-            },
-            {
                 "kind": "INPUT_OBJECT",
                 "name": "DeleteHotelParamsServiceaHotelControllerMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
                     {
                         "name": "id",
                         "description": "The ID of the existing hotel resource.",
@@ -1347,6 +1737,16 @@
                 "fields": null,
                 "inputFields": [
                     {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
                         "name": "id",
                         "description": "The ID of the existing hotel resource.",
                         "type": {
@@ -1372,7 +1772,7 @@
                 "fields": [
                     {
                         "name": "createHotel",
-                        "description": "Path: /example/v1/a/test/\nCreate a hotel resource.Returns the URL of the new resource in the Location header.",
+                        "description": "Path: /example/v1/a/test/\nCreate a hotel resource. Returns the URL of the new resource in the Location header.",
                         "args": [
                             {
                                 "name": "payload",
@@ -1391,7 +1791,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1399,7 +1799,7 @@
                     },
                     {
                         "name": "deleteHotel",
-                        "description": "Path: /example/v1/a/test/{id}\nDelete a hotel resource.You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.",
+                        "description": "Path: /example/v1/a/test/{id}\nDelete a hotel resource. You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.",
                         "args": [
                             {
                                 "name": "params",
@@ -1418,7 +1818,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1426,7 +1826,7 @@
                     },
                     {
                         "name": "updateHotel",
-                        "description": "Path: /example/v1/a/test/{id}\nUpdate a hotel resource.You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.",
+                        "description": "Path: /example/v1/a/test/{id}\nUpdate a hotel resource. You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.",
                         "args": [
                             {
                                 "name": "params",
@@ -1459,7 +1859,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1467,7 +1867,7 @@
                     },
                     {
                         "name": "updateHotel2",
-                        "description": "Path: /example/v1/a/test/{id}/{one}\nUpdate a hotel resource.You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.",
+                        "description": "Path: /example/v1/a/test/{id}/{one}\nUpdate a hotel resource. You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.",
                         "args": [
                             {
                                 "name": "params",
@@ -1500,7 +1900,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1518,6 +1918,16 @@
                 "description": "",
                 "fields": null,
                 "inputFields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
                     {
                         "name": "id",
                         "description": "The ID of the existing hotel resource.",
@@ -1544,6 +1954,16 @@
                 "fields": null,
                 "inputFields": [
                     {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
                         "name": "id",
                         "description": "The ID of the existing hotel resource.",
                         "type": {
@@ -1568,6 +1988,16 @@
                 "description": "",
                 "fields": null,
                 "inputFields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
                     {
                         "name": "one",
                         "description": "Some one",
@@ -1631,7 +2061,7 @@
                 "fields": [
                     {
                         "name": "createHotel",
-                        "description": "Path: /example/v1/hotels/\nCreate a hotel resource.Returns the URL of the new resource in the Location header.",
+                        "description": "Path: /example/v1/hotels/\nCreate a hotel resource. Returns the URL of the new resource in the Location header.",
                         "args": [
                             {
                                 "name": "payload",
@@ -1641,7 +2071,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelInput",
+                                        "name": "HotelServicebInput",
                                         "ofType": null
                                     }
                                 },
@@ -1650,7 +2080,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1658,7 +2088,7 @@
                     },
                     {
                         "name": "deleteHotel",
-                        "description": "Path: /example/v1/hotels/{id}\nDelete a hotel resource.You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.",
+                        "description": "Path: /example/v1/hotels/{id}\nDelete a hotel resource. You have to provide a valid hotel ID in the URL. Once deleted the resource can not be recovered.",
                         "args": [
                             {
                                 "name": "params",
@@ -1677,7 +2107,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1685,7 +2115,7 @@
                     },
                     {
                         "name": "updateHotel",
-                        "description": "Path: /example/v1/hotels/{id}\nUpdate a hotel resource.You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.",
+                        "description": "Path: /example/v1/hotels/{id}\nUpdate a hotel resource. You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.",
                         "args": [
                             {
                                 "name": "params",
@@ -1709,7 +2139,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelInput",
+                                        "name": "HotelServicebInput",
                                         "ofType": null
                                     }
                                 },
@@ -1718,7 +2148,7 @@
                         ],
                         "type": {
                             "kind": "SCALAR",
-                            "name": "Any",
+                            "name": "Raw",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1732,10 +2162,91 @@
             },
             {
                 "kind": "INPUT_OBJECT",
+                "name": "HotelServicebInput",
+                "description": " a simple domain entity doubling as a DTO  ",
+                "fields": null,
+                "inputFields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
+                        "name": "city",
+                        "description": "",
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "String",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
+                        "name": "description",
+                        "description": "",
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "String",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
+                        "name": "id",
+                        "description": "",
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
+                        "name": "name",
+                        "description": "",
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "String",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
+                    {
+                        "name": "rating",
+                        "description": "",
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    }
+                ],
+                "interfaces": null,
+                "enumValues": null,
+                "possibleTypes": null
+            },
+            {
+                "kind": "INPUT_OBJECT",
                 "name": "DeleteHotelParamsServicebHotelControllerMutationInterplayInput",
                 "description": "",
                 "fields": null,
                 "inputFields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
                     {
                         "name": "id",
                         "description": "The ID of the existing hotel resource.",
@@ -1761,6 +2272,16 @@
                 "description": "",
                 "fields": null,
                 "inputFields": [
+                    {
+                        "name": "raw",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "Raw",
+                            "ofType": null
+                        },
+                        "defaultValue": null
+                    },
                     {
                         "name": "id",
                         "description": "The ID of the existing hotel resource.",

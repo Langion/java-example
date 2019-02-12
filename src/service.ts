@@ -5,8 +5,8 @@ import * as fs from "fs";
 import * as graphql from "graphql";
 import expressPlayground from "graphql-playground-middleware-express";
 import { express as voyagerMiddleware } from "graphql-voyager/middleware";
-import { Mutation } from "./components/graphql/Mutation";
-import { Query } from "./components/graphql/Query";
+import { Mutation } from "./components/aggregator/Mutation";
+import { Query } from "./components/aggregator/Query";
 import { api } from "./core/api";
 import { ServiceRequest } from "./core/ServiceRequest";
 
@@ -46,4 +46,4 @@ app.use(
 app.use("/voyager", voyagerMiddleware({ endpointUrl: "/graphql" }));
 app.get("/playground", expressPlayground({ endpoint: "/graphql" }));
 
-app.listen(4000);
+app.listen(4000, () => console.log('GraphQL can be found on http://localhost:4000/graphql'));

@@ -5,8 +5,8 @@ import * as path from "path";
 import * as shell from "shelljs";
 import * as api from "../core/api";
 
-type Origins = "servicea" | "serviceb" | "shared" | "common";
-type Emission = "api" | "model" | "graphql" | "gql";
+type Origins = "servicea" | "serviceb" | "shared" | "remain";
+type Emission = "api" | "model" | "graphql" | "aggregator";
 
 const out = path.resolve(__dirname, "../");
 const server = path.resolve(__dirname, "../../server");
@@ -40,10 +40,6 @@ function introspect() {
 
     const config: introspector.IntrospectorConfig<Origins> = {
         origins,
-        share: {
-            name: "shared",
-            origin: "shared",
-        },
         adapters: [new introspector.SwaggerAdapter(), new introspector.SpringAdapter()],
         getOriginFromModuleName: (p) => {
             const name = p.split(".")[2];
@@ -51,7 +47,7 @@ function introspect() {
             if (name === ("servicea" as Origins) || name === ("serviceb" as Origins)) {
                 return name;
             } else {
-                return "common";
+                return "remain";
             }
         },
     };
@@ -68,17 +64,17 @@ function emit(introspections: Record<Origins, introspector.Introspection<Origins
         outFolderAbsolutePath: path.resolve(out, "components"),
         emitters: [
             (args) => new prism.ApiraApi<Origins, Emission>("api", { ...args, apiAbsolutePath }),
-            (args) => new prism.GraphqlDefinition<Origins, Emission>("gql", args),
             (args) => new prism.TypeScriptDefinition<Origins, Emission>("model", args),
-            (args) => new prism.Graphql<Origins, Emission>("graphql", args),
+            (args) => new prism.GraphqlDefinition<Origins, Emission>("graphql", args, {
+                rawTypePath: '@langion/prism/dist/utils/raw',
+            }),
+            (args) => new prism.GraphqlAggregator<Origins, Emission>("aggregator", args, {
+                resolveTypePath: '@langion/prism/dist/utils/resolveType',
+            }),
         ],
         unknown: {
-            name: "Common",
-            origin: "common",
-        },
-        shared: {
-            name: "Shared",
-            origin: "shared",
+            name: "Remain",
+            origin: "remain",
         },
         tslint: {
             addTsIgnore: true,
@@ -90,4 +86,3 @@ function emit(introspections: Record<Origins, introspector.Introspection<Origins
     const emitters = prism.Prism.emit(config);
     return emitters;
 }
- 

@@ -19,9 +19,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@langion/apira": "1.0.5",
-    "@langion/introspector": "1.0.29",
-    "@langion/prism": "1.0.28",
+    "@langion/apira": "1.0.10",
+    "@langion/introspector": "1.0.42",
+    "@langion/prism": "1.0.34",
     "@types/express": "4.16.0",
     "@types/express-graphql": "0.6.1",
     "@types/graphql": "14.0.0",

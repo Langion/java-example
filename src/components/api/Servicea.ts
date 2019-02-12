@@ -1,9 +1,8 @@
 /* tslint:disable */
 
 import { api } from "../../core/api";
-import * as CommonModel from "../model/Common";
+import * as RemainModel from "../model/Remain";
 import * as ServiceaModel from "../model/Servicea";
-import * as SharedModel from "../model/Shared";
 
 export namespace HotelController {
   export interface DeleteHotelParams {
@@ -41,7 +40,7 @@ export namespace HotelController {
 
   export const createHotel = api
     .path("/example/v1/hotels/")
-    .request<void, void, SharedModel.Hotel>("post")
+    .request<void, void, ServiceaModel.Hotel>("post")
     .build();
 
   export const deleteHotel = api
@@ -51,17 +50,17 @@ export namespace HotelController {
 
   export const getAllHotel = api
     .path("/example/v1/hotels/")
-    .request<CommonModel.Page<SharedModel.Hotel>, GetAllHotelQuery, void>("get")
+    .request<RemainModel.Page<ServiceaModel.Hotel>, GetAllHotelQuery, void>("get")
     .build();
 
   export const getHotel = api
     .path((p: GetHotelParams) => `/example/v1/hotels/${p.id}`)
-    .request<SharedModel.Hotel, void, void>("get")
+    .request<ServiceaModel.Hotel, void, void>("get")
     .build();
 
   export const updateHotel = api
     .path((p: UpdateHotelParams) => `/example/v1/hotels/${p.id}`)
-    .request<void, void, SharedModel.Hotel>("put")
+    .request<void, void, ServiceaModel.Hotel>("put")
     .build();
 }
 
@@ -120,7 +119,7 @@ export namespace TestAController {
 
   export const createHotel = api
     .path("/example/v1/a/test/")
-    .request<void, void, SharedModel.Hotel>("post")
+    .request<void, void, ServiceaModel.Hotel>("post")
     .build();
 
   export const deleteHotel = api
@@ -130,12 +129,12 @@ export namespace TestAController {
 
   export const getAllHotel = api
     .path("/example/v1/a/test/")
-    .request<CommonModel.Page<SharedModel.Hotel>, GetAllHotelQuery, void>("get")
+    .request<RemainModel.Page<ServiceaModel.Hotel>, GetAllHotelQuery, void>("get")
     .build();
 
   export const getHotel = api
     .path((p: GetHotelParams) => `/example/v1/a/test/${p.id}`)
-    .request<SharedModel.Hotel, void, void>("get")
+    .request<ServiceaModel.Hotel, void, void>("get")
     .build();
 
   export const getTestHotel = api
@@ -145,11 +144,11 @@ export namespace TestAController {
 
   export const updateHotel = api
     .path((p: UpdateHotelParams) => `/example/v1/a/test/${p.id}`)
-    .request<void, void, SharedModel.Hotel>("put")
+    .request<void, void, ServiceaModel.Hotel>("put")
     .build();
 
   export const updateHotel2 = api
     .path((p: UpdateHotel2Params) => `/example/v1/a/test/${p.id}/${p.one}`)
-    .request<void, void, SharedModel.Hotel>("put")
+    .request<void, void, ServiceaModel.Hotel>("put")
     .build();
 }
