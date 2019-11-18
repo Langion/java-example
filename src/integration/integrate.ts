@@ -64,7 +64,13 @@ function emit(introspections: Record<Origins, introspector.Introspection<Origins
         outFolderAbsolutePath: path.resolve(out, "components"),
         emitters: [
             (args) => new prism.ApiraApi<Origins, Emission>("api", { ...args, apiAbsolutePath }),
-            (args) => new prism.TypeScriptDefinition<Origins, Emission>("model", args),
+            (args) => new prism.TypeScriptDefinition<Origins, Emission>("model", {
+                ...args, transformEmit: c => {
+                    if (c.introspection.origin === 'servicea') {
+                        c.emit.headlines.unshift('/* Added line to servicea */')
+                    }
+                }
+            }),
             (args) => new prism.GraphqlDefinition<Origins, Emission>("graphql", args, {
                 rawTypePath: '@langion/prism/dist/utils/raw',
             }),

@@ -89,22 +89,12 @@ input GetTestHotelParamsInput {
   id: Float!
 }
 
-""" a simple domain entity doubling as a DTO  """
-type Hotel {
-  raw: Raw
-  city: String
-  description: String
-  id: Float
-  name: String
-  rating: Float
-}
-
 type HotelControllerMutationServicea {
   """
   Path: /example/v1/hotels/
   Create a hotel resource. Returns the URL of the new resource in the Location header.
   """
-  createHotel(payload: HotelInput!): Raw
+  createHotel(payload: HotelServiceaInput!): Raw
 
   """
   Path: /example/v1/hotels/{id}
@@ -117,7 +107,7 @@ type HotelControllerMutationServicea {
   Update a hotel resource. You have to provide a valid hotel ID in the URL and
   in the payload. The ID attribute can not be updated.
   """
-  updateHotel(params: UpdateHotelParamsServiceaHotelControllerMutationInterplayInput!, payload: HotelInput!): Raw
+  updateHotel(params: UpdateHotelParamsServiceaHotelControllerMutationInterplayInput!, payload: HotelServiceaInput!): Raw
 }
 
 type HotelControllerMutationServiceb {
@@ -147,13 +137,13 @@ type HotelControllerServicea {
   Get a paginated list of all hotels. The list is paginated. You can provide a
   page number (default 0) and a page size (default 100)
   """
-  getAllHotel(query: GetAllHotelQueryInput): Page_Hotel
+  getAllHotel(query: GetAllHotelQueryInput): Page_HotelServicea
 
   """
   Path: /example/v1/hotels/{id}
   Get a single hotel. You have to provide a valid hotel ID.
   """
-  getHotel(params: GetHotelParamsInput!): Hotel
+  getHotel(params: GetHotelParamsInput!): HotelServicea
 }
 
 type HotelControllerServiceb {
@@ -178,7 +168,17 @@ type HotelControllerServiceb {
 }
 
 """ a simple domain entity doubling as a DTO  """
-input HotelInput {
+type HotelServicea {
+  raw: Raw
+  city: String
+  description: String
+  id: Float
+  name: String
+  rating: Float
+}
+
+""" a simple domain entity doubling as a DTO  """
+input HotelServiceaInput {
   raw: Raw
   city: String
   description: String
@@ -236,9 +236,9 @@ type Order {
 }
 
 """@addedFrom servicea"""
-type Page_Hotel {
+type Page_HotelServicea {
   raw: Raw
-  content: [Hotel]
+  content: [HotelServicea]
   first: Boolean
   last: Boolean
   number: Float
@@ -301,7 +301,7 @@ type TestAControllerMutationServicea {
   Path: /example/v1/a/test/
   Create a hotel resource. Returns the URL of the new resource in the Location header.
   """
-  createHotel(payload: HotelInput!): Raw
+  createHotel(payload: HotelServiceaInput!): Raw
 
   """
   Path: /example/v1/a/test/{id}
@@ -314,14 +314,14 @@ type TestAControllerMutationServicea {
   Update a hotel resource. You have to provide a valid hotel ID in the URL and
   in the payload. The ID attribute can not be updated.
   """
-  updateHotel(params: UpdateHotelParamsServiceaTestAControllerMutationInterplayInput!, payload: HotelInput!): Raw
+  updateHotel(params: UpdateHotelParamsServiceaTestAControllerMutationInterplayInput!, payload: HotelServiceaInput!): Raw
 
   """
   Path: /example/v1/a/test/{id}/{one}
   Update a hotel resource. You have to provide a valid hotel ID in the URL and
   in the payload. The ID attribute can not be updated.
   """
-  updateHotel2(params: UpdateHotel2ParamsServiceaTestAControllerMutationInterplayInput!, payload: HotelInput!): Raw
+  updateHotel2(params: UpdateHotel2ParamsServiceaTestAControllerMutationInterplayInput!, payload: HotelServiceaInput!): Raw
 }
 
 type TestAControllerServicea {
@@ -330,13 +330,13 @@ type TestAControllerServicea {
   Get a paginated list of all hotels. The list is paginated. You can provide a
   page number (default 0) and a page size (default 100)
   """
-  getAllHotel(query: GetAllHotelQueryServiceaTestAControllerInterplayInput): Page_Hotel
+  getAllHotel(query: GetAllHotelQueryServiceaTestAControllerInterplayInput): Page_HotelServicea
 
   """
   Path: /example/v1/a/test/{id}
   Get a single hotel. You have to provide a valid hotel ID.
   """
-  getHotel(params: GetHotelParamsServiceaTestAControllerInterplayInput!): Hotel
+  getHotel(params: GetHotelParamsServiceaTestAControllerInterplayInput!): HotelServicea
 
   """
   Path: /example/v1/a/test/test/{id}

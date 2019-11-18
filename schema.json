@@ -100,7 +100,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Page_Hotel",
+                            "name": "Page_HotelServicea",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -127,7 +127,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Hotel",
+                            "name": "HotelServicea",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -201,7 +201,7 @@
             {
                 "kind": "SCALAR",
                 "name": "Float",
-                "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). ",
+                "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).",
                 "fields": null,
                 "inputFields": null,
                 "interfaces": null,
@@ -210,7 +210,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "Page_Hotel",
+                "name": "Page_HotelServicea",
                 "description": "@addedFrom servicea",
                 "fields": [
                     {
@@ -234,7 +234,7 @@
                             "name": null,
                             "ofType": {
                                 "kind": "OBJECT",
-                                "name": "Hotel",
+                                "name": "HotelServicea",
                                 "ofType": null
                             }
                         },
@@ -345,7 +345,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "Hotel",
+                "name": "HotelServicea",
                 "description": " a simple domain entity doubling as a DTO  ",
                 "fields": [
                     {
@@ -697,7 +697,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Page_Hotel",
+                            "name": "Page_HotelServicea",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -724,7 +724,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Hotel",
+                            "name": "HotelServicea",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -1535,7 +1535,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelInput",
+                                        "name": "HotelServiceaInput",
                                         "ofType": null
                                     }
                                 },
@@ -1603,7 +1603,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelInput",
+                                        "name": "HotelServiceaInput",
                                         "ofType": null
                                     }
                                 },
@@ -1626,7 +1626,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "HotelInput",
+                "name": "HotelServiceaInput",
                 "description": " a simple domain entity doubling as a DTO  ",
                 "fields": null,
                 "inputFields": [
@@ -1782,7 +1782,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelInput",
+                                        "name": "HotelServiceaInput",
                                         "ofType": null
                                     }
                                 },
@@ -1850,7 +1850,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelInput",
+                                        "name": "HotelServiceaInput",
                                         "ofType": null
                                     }
                                 },
@@ -1891,7 +1891,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "HotelInput",
+                                        "name": "HotelServiceaInput",
                                         "ofType": null
                                     }
                                 },

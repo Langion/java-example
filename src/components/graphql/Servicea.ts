@@ -9,7 +9,7 @@ export const Hotel = (() => {
   function Hotel(isInput: true): graphql.GraphQLInputObjectType;
   function Hotel(isInput: false): graphql.GraphQLObjectType;
   function Hotel(isInput: any) {
-    let name = isInput ? `HotelInput` : `Hotel`;
+    let name = isInput ? `HotelServiceaInput` : `HotelServicea`;
 
     name = name.replace(/[\[\]]/g, "");
 
